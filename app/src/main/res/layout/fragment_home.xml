@@ -7,7 +7,7 @@
     tools:context=".ui.beranda.HomeFragment">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_herbal_section"
         style="@style/TextAppearance.Material3.TitleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,12 +15,12 @@
         android:layout_marginStart="8dp"
         android:text="Tanaman Herbal"
         android:textColor="@color/md_theme_onSurface"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_forward_icon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="@+id/iv_forward_icon" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_forward_icon"
         style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,8 +37,29 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tv_herbal_section"
         tools:layout_editor_absoluteX="0dp"
         tools:listitem="@layout/carousel_item" />
+
+    <TextView
+        android:id="@+id/tv_article_section"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        id="@+id/tv_artikel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:text="Artikel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/carousel_recycler_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        tools:listitem="@layout/article_item"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_article_section" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
