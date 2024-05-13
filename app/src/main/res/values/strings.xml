@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">H-Buddy</string>
+    <string name="app_title">H-BUDDY</string>
+    <string name="tagline">Rasakan Kesejukan Alami \n Herbal dalam Setiap Minumanmu</string>
+    <string name="sign_in">Sign in with Google</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

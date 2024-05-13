@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home_icon_selector"
+        android:title="Beranda"/>
+
+    <item
+        android:id="@+id/detectionFragment"
+        android:icon="@drawable/detection_icon_selector"
+        android:title="Deteksi"/>
+
+    <item
+        android:id="@+id/HistoryFragment"
+        android:icon="@drawable/history_icon_selector"
+        android:title="Riwayat"/>
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile_icon_selector"
+        android:title="Profil"/>
+</menu>
