@@ -36,20 +36,21 @@ class HomeFragment : Fragment() {
 
         carouselAdapter = CarouselAdapter(list, requireContext())
         binding.carouselRecyclerView.adapter = carouselAdapter
-        list.add(CarouselModel(R.drawable.jahe, "Jahe"))
-        list.add(CarouselModel(R.drawable.kencur, "Kencur"))
-        list.add(CarouselModel(R.drawable.temulawak, "Temulawak"))
-        list.add(CarouselModel(R.drawable.kunyit, "Kunyit"))
-        list.add(CarouselModel(R.drawable.kayumanis, "Kayu Manis"))
-        list.add(CarouselModel(R.drawable.lidahbuaya, "Lidah Buaya"))
-
 
         return view
     }
 
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if(list.isEmpty()){
+            list.add(CarouselModel(R.drawable.jahe, "Jahe"))
+            list.add(CarouselModel(R.drawable.kencur, "Kencur"))
+            list.add(CarouselModel(R.drawable.temulawak, "Temulawak"))
+            list.add(CarouselModel(R.drawable.kunyit, "Kunyit"))
+            list.add(CarouselModel(R.drawable.kayumanis, "Kayu Manis"))
+            list.add(CarouselModel(R.drawable.lidahbuaya, "Lidah Buaya"))
+            carouselAdapter.notifyDataSetChanged()
+        }
     }
+
 }
