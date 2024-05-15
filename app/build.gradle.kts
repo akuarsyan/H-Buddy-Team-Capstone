@@ -58,4 +58,10 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
 
+    // ExifInterface
+    implementation("androidx.exifinterface:exifinterface:1.3.6")
+
+    //glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
 }
