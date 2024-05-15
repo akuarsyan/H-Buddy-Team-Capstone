@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".ui.beranda.HomeFragment">
 
+    <LinearLayout
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="?attr/textAppearanceDisplaySmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/md_theme_primary"
+            android:text="@string/app_name"/>
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tv_herbal_section"
         style="@style/TextAppearance.Material3.TitleLarge"
@@ -24,10 +42,12 @@
         style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:layout_gravity="end"
+        android:contentDescription="Forward"
         android:src="@drawable/arrow_right"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/header_title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/carousel_recycler_view"
@@ -44,11 +64,12 @@
     <TextView
         android:id="@+id/tv_article_section"
         style="@style/TextAppearance.Material3.TitleLarge"
-        id="@+id/tv_artikel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="47dp"
         android:text="Artikel"
+        android:textColor="@color/md_theme_onSurface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/carousel_recycler_view" />
 
