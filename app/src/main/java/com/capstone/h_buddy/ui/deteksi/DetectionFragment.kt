@@ -1,5 +1,6 @@
 package com.capstone.h_buddy.ui.deteksi
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.capstone.h_buddy.databinding.FragmentDetectionBinding
+import com.capstone.h_buddy.ui.deteksi.hasil.ResultActivity
 import com.capstone.h_buddy.util.getImageUri
 
 class DetectionFragment : Fragment() {
@@ -29,6 +31,12 @@ class DetectionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonGallery.setOnClickListener { startGallery() }
         binding.buttonCamera.setOnClickListener { startCamera() }
+
+        //sementara untuk preview
+        binding.buttonDetection.setOnClickListener {
+            val intent = Intent(this.requireContext(), ResultActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun startCamera() {
