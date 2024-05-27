@@ -5,15 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.capstone.h_buddy.CarouselAdapter
-import com.capstone.h_buddy.CarouselModel
+import com.capstone.h_buddy.data.adapter.CarouselAdapter
+import com.capstone.h_buddy.data.preference.CarouselModel
 import com.capstone.h_buddy.R
 import com.capstone.h_buddy.databinding.FragmentHomeBinding
-import com.google.android.material.carousel.CarouselLayoutManager
 import com.google.android.material.carousel.CarouselSnapHelper
-import com.google.android.material.carousel.CarouselStrategy
-import com.google.android.material.carousel.HeroCarouselStrategy
 
 
 class HomeFragment : Fragment() {

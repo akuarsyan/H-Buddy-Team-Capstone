@@ -1,10 +1,11 @@
-package com.capstone.h_buddy
+package com.capstone.h_buddy.data.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.capstone.h_buddy.data.preference.CarouselModel
 import com.capstone.h_buddy.databinding.CarouselItemBinding
 import com.google.android.material.animation.AnimationUtils.lerp
 
@@ -29,11 +30,11 @@ class CarouselAdapter(val list: ArrayList<CarouselModel>, val context: Context) 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): CarouselAdapter.ItemViewHolder {
+    ): ItemViewHolder {
         return ItemViewHolder(CarouselItemBinding.inflate(LayoutInflater.from(context), parent, false))
     }
 
-    override fun onBindViewHolder(holder: CarouselAdapter.ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val model = list[position]
         holder.bind(model)
     }

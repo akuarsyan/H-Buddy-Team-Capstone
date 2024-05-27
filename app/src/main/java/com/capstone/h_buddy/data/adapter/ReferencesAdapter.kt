@@ -1,10 +1,11 @@
-package com.capstone.h_buddy
+package com.capstone.h_buddy.data.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.capstone.h_buddy.data.preference.ReferencesModel
 import com.capstone.h_buddy.databinding.ReferencesItemBinding
 import com.google.android.material.animation.AnimationUtils
 
@@ -29,11 +30,11 @@ class ReferencesAdapter (val list: ArrayList<ReferencesModel>, val context: Cont
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): ReferencesAdapter.ItemViewHolder {
+    ): ItemViewHolder {
         return ItemViewHolder(ReferencesItemBinding.inflate(LayoutInflater.from(context), parent, false))
     }
 
-    override fun onBindViewHolder(holder: ReferencesAdapter.ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val model = list[position]
         holder.bind(model)
     }

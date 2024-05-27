@@ -6,11 +6,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.capstone.h_buddy.CarouselAdapter
-import com.capstone.h_buddy.CarouselModel
+import com.capstone.h_buddy.data.adapter.CarouselAdapter
+import com.capstone.h_buddy.data.preference.CarouselModel
 import com.capstone.h_buddy.R
-import com.capstone.h_buddy.ReferencesAdapter
-import com.capstone.h_buddy.ReferencesModel
+import com.capstone.h_buddy.data.adapter.ReferencesAdapter
+import com.capstone.h_buddy.data.preference.ReferencesModel
 import com.capstone.h_buddy.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
