@@ -1,4 +1,4 @@
-package com.capstone.h_buddy.util
+package com.capstone.h_buddy.data.utils
 
 import android.content.ContentResolver
 import android.content.ContentValues

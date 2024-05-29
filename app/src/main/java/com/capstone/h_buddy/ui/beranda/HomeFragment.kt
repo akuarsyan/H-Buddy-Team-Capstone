@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.capstone.h_buddy.data.adapter.CarouselAdapter
 import com.capstone.h_buddy.data.preference.CarouselModel
 import com.capstone.h_buddy.R
 import com.capstone.h_buddy.databinding.FragmentHomeBinding
+import com.capstone.h_buddy.ui.ViewModelFactory
 import com.google.android.material.carousel.CarouselSnapHelper
 
 
@@ -38,7 +40,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if(list.isEmpty()){
+
+
+
+        if (list.isEmpty()) {
             list.add(CarouselModel(R.drawable.jahe, "Jahe"))
             list.add(CarouselModel(R.drawable.kencur, "Kencur"))
             list.add(CarouselModel(R.drawable.temulawak, "Temulawak"))
@@ -47,6 +52,12 @@ class HomeFragment : Fragment() {
             list.add(CarouselModel(R.drawable.lidahbuaya, "Lidah Buaya"))
             carouselAdapter.notifyDataSetChanged()
         }
+
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

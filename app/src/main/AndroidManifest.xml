@@ -15,6 +15,9 @@
         android:theme="@style/Theme.HBuddy"
         tools:targetApi="31">
         <activity
+            android:name=".ui.article.ArticleDetail"
+            android:exported="false" />
+        <activity
             android:name=".ui.deteksi.hasil.ResultActivity"
             android:exported="false" />
         <activity

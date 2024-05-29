@@ -12,7 +12,7 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import com.capstone.h_buddy.databinding.FragmentDetectionBinding
 import com.capstone.h_buddy.ui.deteksi.hasil.ResultActivity
-import com.capstone.h_buddy.util.getImageUri
+import com.capstone.h_buddy.data.utils.getImageUri
 
 class DetectionFragment : Fragment() {
     private lateinit var binding: FragmentDetectionBinding
