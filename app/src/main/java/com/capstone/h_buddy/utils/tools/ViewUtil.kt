@@ -1,4 +1,4 @@
-package com.capstone.h_buddy.data.utils
+package com.capstone.h_buddy.utils.tools
 
 import android.os.Build
 import android.view.WindowInsets

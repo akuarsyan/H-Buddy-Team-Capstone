@@ -1,4 +1,4 @@
-package com.capstone.h_buddy.data.utils
+package com.capstone.h_buddy.utils.tools
 
 import java.text.ParseException
 import java.text.SimpleDateFormat

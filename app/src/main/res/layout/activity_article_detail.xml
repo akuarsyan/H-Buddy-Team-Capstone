@@ -7,13 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".ui.article.ArticleDetail">
 
-<WebView
-    android:id="@+id/article_web_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"/>
+    <LinearLayout
+        android:id="@+id/article_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/article_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationContentDescription="Kembali"
+            app:navigationIcon="@drawable/arrow_back"
+            app:title="Artikel"
+            app:titleTextColor="@color/md_theme_onSurface" />
+
+    </LinearLayout>
+
+
+    <WebView
+        android:id="@+id/article_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/article_header" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

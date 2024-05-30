@@ -10,8 +10,9 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import com.capstone.h_buddy.R
 import com.capstone.h_buddy.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 

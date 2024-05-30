@@ -39,30 +39,32 @@
 
     <TextView
         android:id="@+id/tv_article_body"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/md_theme_outline"
-        android:maxLines="3"
         android:ellipsize="end"
+        android:maxLines="3"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore asdad"
+        android:textColor="@color/md_theme_outline"
+        app:layout_constraintBottom_toTopOf="@+id/tv_article_date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_article_title"
         app:layout_constraintTop_toBottomOf="@id/tv_article_title" />
 
     <TextView
         android:id="@+id/tv_article_date"
+        style="@style/TextAppearance.Material3.LabelSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        style="@style/TextAppearance.Material3.LabelSmall"
-        android:textColor="@color/md_theme_onSurface"
+        android:layout_marginTop="4dp"
         android:text="Senin, 01 Januari 2024"
-        app:layout_constraintEnd_toEndOf="@+id/tv_article_body"
-        app:layout_constraintTop_toBottomOf="@+id/tv_article_body"/>
+        android:textColor="@color/md_theme_onSurface"
+        app:layout_constraintTop_toBottomOf="@id/materialCardView"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider_article"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
