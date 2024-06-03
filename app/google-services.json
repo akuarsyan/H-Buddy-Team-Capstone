@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "4220805963",
+    "project_id": "h-buddy-b44ae",
+    "storage_bucket": "h-buddy-b44ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4220805963:android:60cb1618f195916d83bece",
+        "android_client_info": {
+          "package_name": "com.capstone.h_buddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc_lb_s_lrJJxIOXApT80sSkVX8sLOTmk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
