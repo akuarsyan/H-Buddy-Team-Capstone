@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.credentials.CredentialManager
@@ -30,7 +29,7 @@ import com.google.firebase.auth.auth
 import kotlinx.coroutines.launch
 
 class WelcomeActivity : AppCompatActivity() {
-    lateinit var binding: ActivityWelcomeBinding
+    private lateinit var binding: ActivityWelcomeBinding
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
 
