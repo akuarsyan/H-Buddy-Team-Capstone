@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.capstone.h_buddy" />
+                  <option name="mobileSdkAppId" value="1:4220805963:android:60cb1618f195916d83bece" />
+                  <option name="projectId" value="h-buddy-b44ae" />
+                  <option name="projectNumber" value="4220805963" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
