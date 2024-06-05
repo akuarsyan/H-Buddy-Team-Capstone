@@ -43,6 +43,14 @@ class ResultActivity : AppCompatActivity() {
 
         addItemOtherResult()
         addItemReferences()
+
+        //classification result
+        setResultClassification()
+    }
+
+    private fun setResultClassification() {
+        val resultString = intent.getStringExtra(RESULT_STRING)
+        binding.tvResultTitle.text = resultString
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -70,8 +78,13 @@ class ResultActivity : AppCompatActivity() {
             carouselAdapter.notifyDataSetChanged()
         }
     }
+
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    companion object{
+        const val RESULT_STRING = "result_string"
     }
 }
