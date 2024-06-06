@@ -23,6 +23,8 @@
         android:id="@+id/card_notes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         style="@style/Widget.Material3.CardView.Outlined"
         android:layout_marginTop="24dp"
         app:cardBackgroundColor="@color/md_theme_secondaryContainer"
@@ -76,6 +78,8 @@
         style="@style/Widget.Material3.CardView.Filled"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/card_notes">
 
@@ -101,7 +105,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:gravity="center"
@@ -131,12 +135,12 @@
 
         <Button
             android:id="@+id/button_detection"
-            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:paddingVertical="12dp"
             android:enabled="false"
-            app:icon= "@drawable/detection_icon_selector_button"
+            android:text="Deteksi"
             app:iconSize= "34dp"
           />
     </LinearLayout>
