@@ -42,6 +42,7 @@ android {
         viewBinding = true
         buildConfig = true
     }
+
 }
 
 dependencies {
@@ -98,5 +99,8 @@ dependencies {
 
     //data store
     implementation("androidx.datastore:datastore-preferences:1.1.1")
+
+    //toast
+    implementation("com.github.GrenderG:Toasty:1.5.2")
 
 }

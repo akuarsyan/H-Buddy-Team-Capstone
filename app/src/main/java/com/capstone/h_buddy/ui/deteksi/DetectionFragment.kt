@@ -1,6 +1,7 @@
 package com.capstone.h_buddy.ui.deteksi
 
 import android.content.Intent
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.lifecycleScope
 import com.capstone.h_buddy.data.api.detectionmodel.ClassificationResponse
 import com.capstone.h_buddy.data.server.ApiConfig
@@ -20,6 +22,7 @@ import com.capstone.h_buddy.utils.tools.getImageUri
 import com.capstone.h_buddy.utils.tools.reduceImageFile
 import com.capstone.h_buddy.utils.tools.uriToFile
 import com.google.gson.Gson
+import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -43,6 +46,7 @@ class DetectionFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonGallery.setOnClickListener { startGallery() }
         binding.buttonCamera.setOnClickListener { startCamera() }
+        binding.cardPreview.setOnClickListener{ startGallery()}
 
         //sementara untuk preview
         binding.buttonDetection.setOnClickListener {
@@ -84,6 +88,7 @@ class DetectionFragment : Fragment() {
         currentImageUri?.let {
             Log.d("Photo Picker", "showImage: $it")
             binding.ivDetectionPreview.setImageURI(it)
+            binding.buttonDetection.isEnabled= true
         }
     }
 
@@ -105,6 +110,7 @@ class DetectionFragment : Fragment() {
                     val successResponse = apiService.uploadImage(multipartImageFile)
                    val resultClassification = with(successResponse.data){
                         if (isAboveThreshold == true){
+
                             showToast(successResponse.message.toString())
                             String.format("%s with %.2f%%", result, confidenceScore)
                         } else {
@@ -123,7 +129,8 @@ class DetectionFragment : Fragment() {
                     showLoading(false)
                 }
             }
-        } ?: showToast("Silakan pilih gambar terlebih dahulu")
+        } ?: showToast("Please select an image first")
+
     }
 
         private fun showLoading(isLoading: Boolean) {

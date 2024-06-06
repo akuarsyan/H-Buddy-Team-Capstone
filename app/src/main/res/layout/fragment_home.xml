@@ -19,9 +19,9 @@
             style="?attr/textAppearanceDisplaySmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
+            android:text="@string/app_name"
             android:textColor="@color/md_theme_primary"
-            android:text="@string/app_name"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <com.google.android.material.materialswitch.MaterialSwitch
@@ -50,8 +50,8 @@
         style="@style/Widget.Material3.Button.IconButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:layout_gravity="end"
+        android:layout_marginTop="12dp"
         android:contentDescription="Forward"
         android:src="@drawable/arrow_right"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,10 +86,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        tools:listitem="@layout/article_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_article_section" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_article_section"
+        tools:listitem="@layout/article_item" />
 
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
