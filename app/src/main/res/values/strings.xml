@@ -3,7 +3,31 @@
     <string name="app_title">H-BUDDY</string>
     <string name="tagline">Rasakan Kesejukan Alami \n Herbal dalam Setiap Minumanmu</string>
     <string name="sign_in">Sign in with Google</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="something_wrong">Oops.. something went wrong</string>
+
+    //home page
+    <string name="main_herbal_section">Tanaman Herbal</string>
+    <string name="main_article_section">Artikel</string>
+    <string name="article_cd_image">Gambar Artikel</string>
+    <string name="carousel_cd_image">Herbal List Image</string>
+
+    //detection page
+    <string name="notes_title">Petunjuk</string>
+    <string name="notes_body">Pastikan gambar jelas dengan pencahayaan baik dan latar belakang sederhana. Aplikasi akan memproses dan menampilkan hasil klasifikasi tanaman anda secara otomatis.</string>
+    <string name="gallery_button">Galeri</string>
+    <string name="button_camera">Kamera</string>
+    <string name="detection_button">Deteksi</string>
+    <string name="detection_header">Deteksi Tanaman</string>
+    <string name="detection_cd_image">Tampilan Gambar</string>
+
+    //result page
+    <string name="result_cd_image_result">Image Result Preview</string>
+    <string name="result_reference_title">Referensi</string>
+    <string name="result_other_title">Tanaman Lainnya</string>
+    <string name="result_benefit_title">Manfaat</string>
+    <string name="result_content_title">Kandungan</string>
+    <string name="result_description_title">Deskripsi</string>
+
+
 </resources>

@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
 
         android:layout_height="wrap_content"
-        android:text="Deteksi Tanaman"
+        android:text="@string/detection_header"
         android:textColor="@color/md_theme_onSurface"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
-                android:text="Petunjuk"
+                android:text="@string/notes_title"
                 android:textColor="@color/md_theme_onSecondaryContainer"
                 app:layout_constraintStart_toEndOf="@+id/icon_alert"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,6 +53,7 @@
                 android:id="@+id/icon_alert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="@string/notes_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/alert" />
@@ -63,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Pastikan gambar jelas dengan pencahayaan baik dan latar belakang sederhana. Aplikasi akan memproses dan menampilkan hasil klasifikasi tanaman anda secara otomatis."
+                android:text="@string/notes_body"
                 android:textColor="@color/md_theme_onSecondaryContainer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +90,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
+            android:contentDescription="@string/detection_cd_image"
             app:srcCompat="@drawable/ic_launcher_foreground" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -120,7 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="12dp"
-            android:text="Galeri"
+            android:text="@string/gallery_button"
             app:icon="@drawable/ic_galery" />
 
         <Button
@@ -130,7 +132,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:paddingVertical="12dp"
-            android:text="Kamera"
+            android:text="@string/button_camera"
             app:icon="@drawable/ic_camera" />
 
         <Button
@@ -140,9 +142,9 @@
             android:layout_marginStart="8dp"
             android:paddingVertical="12dp"
             android:enabled="false"
-            android:text="Deteksi"
+            android:text="@string/detection_button"
             app:iconSize= "34dp"
-          />
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
 

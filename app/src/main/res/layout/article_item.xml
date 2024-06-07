@@ -18,8 +18,9 @@
             android:id="@+id/iv_article_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/article_cd_image"
             android:scaleType="centerCrop"
-            android:src="@drawable/jahe" />
+            tools:src="@drawable/ic_launcher_foreground" />
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
@@ -32,7 +33,7 @@
         android:maxLines="2"
         android:ellipsize="end"
         android:textColor="@color/md_theme_onSurface"
-        android:text="Judul Artikel, Judul Artikel, Judul Artikel, Judul Artikel, Judul Artikel"
+        tools:text="Judul Artikel, Judul Artikel, Judul Artikel, Judul Artikel, Judul Artikel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialCardView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +46,7 @@
         android:layout_marginTop="4dp"
         android:ellipsize="end"
         android:maxLines="3"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore asdad"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore asdad"
         android:textColor="@color/md_theme_outline"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:text="Senin, 01 Januari 2024"
+        tools:text="Senin, 01 Januari 2024"
         android:textColor="@color/md_theme_onSurface"
         app:layout_constraintTop_toBottomOf="@id/materialCardView"
         app:layout_constraintEnd_toEndOf="parent" />

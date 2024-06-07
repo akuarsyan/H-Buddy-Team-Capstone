@@ -24,13 +24,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="24dp">
-
 
 
         <com.google.android.material.card.MaterialCardView
@@ -40,13 +37,14 @@
             android:layout_height="360dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/temulawak" />
+                android:contentDescription="@string/result_cd_image_result"
+                android:src="@drawable/ic_launcher_foreground" />
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
@@ -55,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="26dp"
-            android:text="Temulawak "
+            tools:text="Temulawak"
             android:textColor="@color/md_theme_onSurface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_result_preview" />
@@ -65,7 +63,7 @@
             style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Curcuma zanthorrhiza"
+            tools:text="Curcuma zanthorrhiza"
             android:textColor="@color/md_theme_onSurfaceVariant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_result_title" />
@@ -84,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Deskripsi"
+            android:text="@string/result_description_title"
             android:textColor="@color/md_theme_onSurface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider_result" />
@@ -95,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Temulawak menjadi tanaman obat dengan banyak senyawa yang bermanfaat untuk kesehatan. Ini termasuk vitamin, kalsium, zat besi, sodium, potasium, hingga asam folat. Selain itu, tanaman herbal ini juga mengandung zat aktif seperti pati, kurkumin, minyak atsiri, turmerol, borneol, dan phellandren."
+            tools:text="Temulawak menjadi tanaman obat dengan banyak senyawa yang bermanfaat untuk kesehatan. Ini termasuk vitamin, kalsium, zat besi, sodium, potasium, hingga asam folat. Selain itu, tanaman herbal ini juga mengandung zat aktif seperti pati, kurkumin, minyak atsiri, turmerol, borneol, dan phellandren."
             android:textColor="@color/md_theme_onSurfaceVariant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_description" />
@@ -107,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Kandungan"
+            android:text="@string/result_content_title"
             android:textColor="@color/md_theme_onSurface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_description" />
@@ -118,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
+            tools:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
             android:textColor="@color/md_theme_onSurfaceVariant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_content" />
@@ -130,7 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Manfaat"
+            android:text="@string/result_benefit_title"
             android:textColor="@color/md_theme_onSurface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_content" />
@@ -141,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
+            tools:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
             android:textColor="@color/md_theme_onSurfaceVariant"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title_benefits" />
@@ -160,7 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="24dp"
-            android:text="Referensi"
+            android:text="@string/result_reference_title"
             android:textColor="@color/md_theme_onSurface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider_references" />
@@ -184,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
-            android:text="Tanaman Lainnya"
+            android:text="@string/result_other_title"
             android:textColor="@color/md_theme_onSurface"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rv_result_references" />

@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="8dp"
-        android:text="Tanaman Herbal"
+        android:text="@string/main_herbal_section"
         android:textColor="@color/md_theme_onSurface"
         app:layout_constraintBottom_toBottomOf="@+id/iv_forward_icon"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,10 +54,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginTop="12dp"
-        android:contentDescription="Forward"
         android:src="@drawable/arrow_right"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_title" />
+        app:layout_constraintTop_toBottomOf="@id/header_title"
+        tools:ignore="ContentDescription" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/carousel_recycler_view"
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="47dp"
-        android:text="Artikel"
+        android:text="@string/main_article_section"
         android:textColor="@color/md_theme_onSurface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/carousel_recycler_view" />
