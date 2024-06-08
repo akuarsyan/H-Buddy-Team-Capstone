@@ -17,9 +17,9 @@
         tools:layout="@layout/fragment_detection" />
     <fragment
         android:id="@+id/HistoryFragment"
-        android:name="com.capstone.h_buddy.ui.riwayat.HistoryFragment"
+        android:name="com.capstone.h_buddy.ui.favorite.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.capstone.h_buddy.ui.profil.ProfileFragment"

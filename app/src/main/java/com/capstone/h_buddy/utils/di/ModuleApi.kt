@@ -1,6 +1,6 @@
 package com.capstone.h_buddy.utils.di
 
-import com.capstone.h_buddy.data.server.ArticleApiService
+import com.capstone.h_buddy.data.server.ArticlesApiService
 import com.capstone.h_buddy.utils.BASE_URL
 import com.capstone.h_buddy.utils.TIMEOUT_TIME
 import com.google.gson.Gson
@@ -24,7 +24,7 @@ object ModuleApi {
 
     @Provides
     @Singleton
-    fun providerGson() : Gson = GsonBuilder().setLenient().create()
+    fun providerGson(): Gson = GsonBuilder().setLenient().create()
 
     @Provides
     @Singleton
@@ -33,15 +33,18 @@ object ModuleApi {
     @Provides
     @Singleton
     fun provideClient(time: Long) = OkHttpClient.Builder()
-        .connectTimeout(time,TimeUnit.SECONDS)
-        .readTimeout(time,TimeUnit.SECONDS)
+        .connectTimeout(time, TimeUnit.SECONDS)
+        .readTimeout(time, TimeUnit.SECONDS)
         .writeTimeout(time, TimeUnit.SECONDS)
         .retryOnConnectionFailure(true)
         .build()
 
     @Provides
     @Singleton
-    fun provideRetrofit(base_url: String, gson:Gson, client: OkHttpClient): ArticleApiService =
-        Retrofit.Builder().baseUrl(base_url).addConverterFactory(GsonConverterFactory.create(gson))
-            .client(client).build().create(ArticleApiService::class.java)
+    fun provideRetrofit(base_url: String, gson: Gson, client: OkHttpClient): ArticlesApiService =
+        Retrofit
+            .Builder()
+            .baseUrl(base_url)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .client(client).build().create(ArticlesApiService::class.java)
 }

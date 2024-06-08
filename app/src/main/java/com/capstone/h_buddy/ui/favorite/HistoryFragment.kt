@@ -1,4 +1,4 @@
-package com.capstone.h_buddy.ui.riwayat
+package com.capstone.h_buddy.ui.favorite
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ class HistoryFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_history, container, false)
+        return inflater.inflate(R.layout.fragment_favorite, container, false)
     }
 
 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    style="@style/Widget.Material3.CardView.Filled"
+    style="@style/Widget.Material3.CardView.Elevated"
     android:layout_marginBottom="12dp"
     app:cardCornerRadius="24dp"
     android:backgroundTint="@color/md_theme_surfaceContainer">
@@ -12,13 +12,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp">
+        android:paddingEnd="12dp">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="140dp"
-            android:layout_height="170dp"
+            android:layout_height="190dp"
+            app:cardCornerRadius="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -37,6 +38,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
             android:ellipsize="end"
             android:maxLines="2"
             android:textColor="@color/md_theme_onSurface"
@@ -68,6 +70,7 @@
             android:layout_height="wrap_content"
             app:chipStrokeWidth="0dp"
             app:chipCornerRadius="200dp"
+            android:layout_marginBottom="12dp"
             android:backgroundTint="@color/md_theme_tertiaryContainer"
             android:clickable="false"
             android:textColor="@color/md_theme_onTertiaryContainer"

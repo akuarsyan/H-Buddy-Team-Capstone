@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.capstone.h_buddy.data.api.article.ArticleResponse
+import com.capstone.h_buddy.data.api.article.ArticlesResponse
 import com.capstone.h_buddy.data.preference.DataStoreManager
 import com.capstone.h_buddy.data.repository.MainRepository
 import com.capstone.h_buddy.utils.MyResponse
@@ -21,14 +21,14 @@ class HomeViewModel @Inject constructor(
     private val dataStoreManager: DataStoreManager,
 ) : ViewModel() {
     //article
-    private val _articleData = MutableLiveData<MyResponse<ArticleResponse>>()
-    val articleData: LiveData<MyResponse<ArticleResponse>> get() = _articleData
+    private val _articleData = MutableLiveData<MyResponse<ArticlesResponse>>()
+    val articleData: LiveData<MyResponse<ArticlesResponse>> get() = _articleData
     private var isDataLoaded = false
     fun getAllNotes() {
         if (isDataLoaded) return
         viewModelScope.launch {
             try {
-                repository.lastArticle().collect {
+                repository.getArticles().collect {
                     _articleData.value = it
                     isDataLoaded = true
                 }

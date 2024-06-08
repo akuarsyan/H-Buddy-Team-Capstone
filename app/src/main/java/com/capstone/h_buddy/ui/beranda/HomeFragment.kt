@@ -1,7 +1,5 @@
 package com.capstone.h_buddy.ui.beranda
 
-import android.app.UiModeManager
-import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,8 +10,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getDrawable
-import androidx.core.content.res.ResourcesCompat.getDrawable
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
