@@ -2,23 +2,42 @@ package com.capstone.h_buddy.ui.deteksi.hasil
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.h_buddy.data.adapter.CarouselAdapter
 import com.capstone.h_buddy.data.preference.CarouselModel
 import com.capstone.h_buddy.R
+import com.capstone.h_buddy.data.adapter.ArticleAdapter
 import com.capstone.h_buddy.data.adapter.ReferencesAdapter
 import com.capstone.h_buddy.data.preference.ReferencesModel
 import com.capstone.h_buddy.databinding.ActivityResultBinding
+import com.capstone.h_buddy.ui.beranda.HomeViewModel
+import com.capstone.h_buddy.utils.MyResponse
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class ResultActivity : AppCompatActivity() {
     private lateinit var binding: ActivityResultBinding
     private val list = ArrayList<CarouselModel>()
     private var listReferences = ArrayList<ReferencesModel>()
     private lateinit var carouselAdapter: CarouselAdapter
     private lateinit var referencesAdapter: ReferencesAdapter
+
+    // viewModel
+    private val viewModel: HomeViewModel by viewModels()
+
+    @Inject
+    lateinit var articleAdapter: ArticleAdapter
+
+
+
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,11 +60,40 @@ class ResultActivity : AppCompatActivity() {
         referencesAdapter = ReferencesAdapter(listReferences, this)
         binding.rvResultReferences.adapter = referencesAdapter
 
+        setUpViews()
+        viewModel.getAllNotes()
         addItemOtherResult()
-        addItemReferences()
-
+        observeArticleReference()
         //classification result
         setResultClassification()
+    }
+
+
+
+
+    private fun setUpViews() {
+        binding.rvResultReferences.apply {
+            layoutManager = LinearLayoutManager(this@ResultActivity, LinearLayoutManager.HORIZONTAL, false)
+            adapter = articleAdapter
+        }
+    }
+
+    private fun observeArticleReference() {
+        viewModel.articleData.observe(this) { response ->
+            when (response.status) {
+                MyResponse.Status.SUCCESS -> {
+                    binding.progressBarArticleReference.visibility = View.GONE
+                    response.data?.articles?.let { articleAdapter.setData(it) }
+                }
+                MyResponse.Status.ERROR -> {
+                    binding.progressBarArticleReference.visibility = View.GONE
+                    Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+                }
+                MyResponse.Status.LOADING -> {
+                    binding.progressBarArticleReference.visibility = View.VISIBLE
+                }
+            }
+        }
     }
 
     private fun setResultClassification() {
@@ -54,21 +102,8 @@ class ResultActivity : AppCompatActivity() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun addItemReferences() {
-        if(listReferences.isEmpty()){
-            listReferences.add(ReferencesModel(R.drawable.jahe, "Jahe"))
-            listReferences.add(ReferencesModel(R.drawable.kencur, "Kencur"))
-            listReferences.add(ReferencesModel(R.drawable.temulawak, "Temulawak"))
-            listReferences.add(ReferencesModel(R.drawable.kunyit, "Kunyit"))
-            listReferences.add(ReferencesModel(R.drawable.kayumanis, "Kayu Manis"))
-            listReferences.add(ReferencesModel(R.drawable.lidahbuaya, "Lidah Buaya"))
-            referencesAdapter.notifyDataSetChanged()
-        }
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
     private fun addItemOtherResult() {
-        if(list.isEmpty()){
+        if (list.isEmpty()) {
             list.add(CarouselModel(R.drawable.jahe, "Jahe"))
             list.add(CarouselModel(R.drawable.kencur, "Kencur"))
             list.add(CarouselModel(R.drawable.temulawak, "Temulawak"))
@@ -84,7 +119,7 @@ class ResultActivity : AppCompatActivity() {
         return true
     }
 
-    companion object{
+    companion object {
         const val RESULT_STRING = "result_string"
     }
 }

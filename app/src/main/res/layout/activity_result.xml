@@ -24,181 +24,247 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp">
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_result_preview"
-            style="@style/Widget.Material3.CardView.Filled"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="360dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp">
 
-            <ImageView
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_result_preview"
+                style="@style/Widget.Material3.CardView.Filled"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/result_cd_image_result"
-                android:src="@drawable/ic_launcher_foreground" />
-        </com.google.android.material.card.MaterialCardView>
+                android:layout_height="360dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_result_title"
-            style="@style/TextAppearance.Material3.HeadlineMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
-            tools:text="Temulawak"
-            android:textColor="@color/md_theme_onSurface"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_result_preview" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@string/result_cd_image_result"
+                    android:src="@drawable/ic_launcher_foreground" />
+            </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/tv_result_species"
-            style="@style/TextAppearance.Material3.TitleMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Curcuma zanthorrhiza"
-            android:textColor="@color/md_theme_onSurfaceVariant"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_result_title" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_result_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/md_theme_tertiaryContainer"
+                app:layout_constraintTop_toBottomOf="@+id/card_result_preview">
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_result_species" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
-        <!--    Deskripsi-->
-        <TextView
-            android:id="@+id/tv_title_description"
-            style="@style/TextAppearance.Material3.TitleMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/result_description_title"
-            android:textColor="@color/md_theme_onSurface"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider_result" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_description"
-            style="@style/TextAppearance.Material3.BodyMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            tools:text="Temulawak menjadi tanaman obat dengan banyak senyawa yang bermanfaat untuk kesehatan. Ini termasuk vitamin, kalsium, zat besi, sodium, potasium, hingga asam folat. Selain itu, tanaman herbal ini juga mengandung zat aktif seperti pati, kurkumin, minyak atsiri, turmerol, borneol, dan phellandren."
-            android:textColor="@color/md_theme_onSurfaceVariant"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_description" />
+                        <TextView
+                            android:id="@+id/tv_result_title"
+                            style="@style/TextAppearance.Material3.HeadlineSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/md_theme_onTertiaryContainer"
+                            android:textStyle="bold"
+                            tools:text="Nama Tumbuhan" />
 
-        <!--    Kandungan-->
-        <TextView
-            android:id="@+id/tv_title_content"
-            style="@style/TextAppearance.Material3.TitleMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/result_content_title"
-            android:textColor="@color/md_theme_onSurface"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+                        <TextView
+                            style="@style/TextAppearance.Material3.TitleMedium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/md_theme_onSurface"
+                            android:textStyle="italic"
+                            android:layout_marginTop="4dp"
+                            tools:text="Nama Tumbuhan" />
+                    </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_content"
-            style="@style/TextAppearance.Material3.BodyMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            tools:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
-            android:textColor="@color/md_theme_onSurfaceVariant"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_content" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        app:cardCornerRadius="200dp"
+                        android:layout_marginStart="12dp"
+                        app:strokeColor="@color/md_theme_onPrimaryContainer"
+                        app:strokeWidth="2dp">
 
-        <!--        Manfaat-->
-        <TextView
-            android:id="@+id/tv_title_benefits"
-            style="@style/TextAppearance.Material3.TitleMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/result_benefit_title"
-            android:textColor="@color/md_theme_onSurface"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+                        <CheckBox
+                            android:id="@+id/button_favorite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/md_theme_primaryContainer"
+                            android:button="@drawable/bookmark_icon_selector"
+                            android:checked="false"
+                            app:buttonTint="@color/md_theme_onPrimaryContainer" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-        <TextView
-            android:id="@+id/tv_benefits"
-            style="@style/TextAppearance.Material3.BodyMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            tools:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
-            android:textColor="@color/md_theme_onSurfaceVariant"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title_benefits" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_result_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:backgroundTint="@color/md_theme_surfaceContainer"
+                app:layout_constraintTop_toBottomOf="@+id/card_result_name">
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider_references"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_benefits" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_title_references"
-            style="@style/TextAppearance.Material3.TitleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/result_reference_title"
-            android:textColor="@color/md_theme_onSurface"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider_references" />
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/result_description_title"
+                        android:textColor="@color/md_theme_primary" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_result_references"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_references"
-            tools:listitem="@layout/references_item" />
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Temulawak menjadi tanaman obat dengan banyak senyawa yang bermanfaat untuk kesehatan. Ini termasuk vitamin, kalsium, zat besi, sodium, potasium, hingga asam folat. Selain itu, tanaman herbal ini juga mengandung zat aktif seperti pati, kurkumin, minyak atsiri, turmerol, borneol, dan phellandren."
+                        android:textColor="@color/md_theme_onSurfaceVariant" />
 
-        <TextView
-            android:id="@+id/tv_result_other"
-            style="@style/TextAppearance.Material3.TitleLarge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="32dp"
-            android:text="@string/result_other_title"
-            android:textColor="@color/md_theme_onSurface"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rv_result_references" />
+                </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_result_other"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_result_other"
-            tools:listitem="@layout/carousel_item" />
+            </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_result_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:backgroundTint="@color/md_theme_surfaceContainer"
+                app:layout_constraintTop_toBottomOf="@+id/card_result_description">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/result_content_title"
+                        android:textColor="@color/md_theme_primary" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
+                        android:textColor="@color/md_theme_onSurfaceVariant" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_result_benefit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:backgroundTint="@color/md_theme_surfaceContainer"
+                app:layout_constraintTop_toBottomOf="@+id/card_result_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.TitleMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/result_benefit_title"
+                        android:textColor="@color/md_theme_primary" />
+
+                    <TextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
+                        android:textColor="@color/md_theme_onSurfaceVariant" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_title_references"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="48dp"
+                android:text="@string/result_reference_title"
+                android:textColor="@color/md_theme_onSurface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card_result_benefit" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress_bar_article_reference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:layout_constraintStart_toStartOf="@id/rv_result_references"
+                app:layout_constraintEnd_toEndOf="@id/rv_result_references"
+                app:layout_constraintBottom_toBottomOf="@id/rv_result_references"
+                app:layout_constraintTop_toTopOf="@id/rv_result_references"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_result_references"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_references"
+                tools:listitem="@layout/article_item" />
+
+            <TextView
+                android:id="@+id/tv_result_other"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="@string/result_other_title"
+                android:textColor="@color/md_theme_onSurface"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_result_references" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_result_other"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_result_other"
+                tools:listitem="@layout/carousel_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </androidx.core.widget.NestedScrollView>
