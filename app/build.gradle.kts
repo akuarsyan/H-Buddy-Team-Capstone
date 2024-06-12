@@ -56,6 +56,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+
     //authentication
     implementation("com.google.android.gms:play-services-auth:21.2.0")
     implementation("androidx.credentials:credentials:1.2.2")
@@ -103,4 +104,6 @@ dependencies {
     //toast
     implementation("com.github.GrenderG:Toasty:1.5.2")
 
+    //circle image
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }

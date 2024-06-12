@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_detection" />
     <fragment
         android:id="@+id/HistoryFragment"
-        android:name="com.capstone.h_buddy.ui.favorite.HistoryFragment"
+        android:name="com.capstone.h_buddy.ui.favorite.FavoriteFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_favorite" />
     <fragment
