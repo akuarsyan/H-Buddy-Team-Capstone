@@ -18,7 +18,9 @@
             android:id="@+id/materialCardView"
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="140dp"
-            android:layout_height="170dp"
+            android:layout_height="0dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/button_favorite"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -38,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:ellipsize="end"
-            android:maxLines="2"
+            android:maxLines="3"
             android:textColor="@color/md_theme_onSurface"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,46 +52,28 @@
             android:id="@+id/tv_article_body"
             style="@style/TextAppearance.Material3.BodyMedium"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="12dp"
             android:ellipsize="end"
-            android:maxLines="3"
+            android:maxLines="2"
             android:textColor="@color/md_theme_outline"
-            app:layout_constraintBottom_toTopOf="@+id/tv_article_label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_article_title"
             app:layout_constraintTop_toBottomOf="@id/tv_article_title"
             tools:text="Lorem ipsum dolor do eiusmod tempor incididunt ut labore et dolore asdad  tempor incididunt ut labore e" />
 
-        <com.google.android.material.chip.Chip
+        <TextView
             android:id="@+id/tv_article_label"
-            android:layout_width="wrap_content"
+            style="@style/TextAppearance.Material3.LabelSmall"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:chipStrokeWidth="0dp"
-            app:chipCornerRadius="200dp"
-            android:backgroundTint="@color/md_theme_tertiaryContainer"
+            android:layout_marginTop="24dp"
             android:clickable="false"
-            android:textColor="@color/md_theme_onTertiaryContainer"
-            app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
-            app:layout_constraintStart_toStartOf="@+id/tv_article_body"
+            android:textColor="@color/md_theme_tertiary"
+            app:layout_constraintEnd_toStartOf="@+id/button_favorite"
+            app:layout_constraintStart_toStartOf="@+id/tv_article_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_article_body"
             tools:text="Bunga telang" />
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_favorite"
-            style="@style/Widget.Material3.CardView.Outlined"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/md_theme_primaryContainer"
-            app:cardCornerRadius="200dp"
-
-            app:layout_constraintBottom_toBottomOf="@+id/tv_article_label"
-
-            app:layout_constraintEnd_toEndOf="@+id/tv_article_body"
-            app:layout_constraintTop_toTopOf="@+id/tv_article_label"
-            app:strokeColor="@color/md_theme_onSurface"
-            app:strokeWidth="2dp">
 
 
             <CheckBox
@@ -98,9 +82,11 @@
                 android:layout_height="wrap_content"
                 android:button="@drawable/bookmark_icon_selector"
                 android:checked="false"
-                app:buttonTint="@color/md_theme_onPrimaryContainer" />
+                app:buttonTint="@color/md_theme_primary"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_article_label"
+                app:layout_constraintEnd_toEndOf="@+id/tv_article_body"
+                app:layout_constraintTop_toTopOf="@+id/tv_article_label"/>
 
-        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

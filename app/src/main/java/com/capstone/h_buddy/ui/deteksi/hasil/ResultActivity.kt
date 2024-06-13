@@ -19,6 +19,7 @@ import com.capstone.h_buddy.data.preference.ReferencesModel
 import com.capstone.h_buddy.databinding.ActivityResultBinding
 import com.capstone.h_buddy.ui.beranda.HomeViewModel
 import com.capstone.h_buddy.utils.MyResponse
+import com.capstone.h_buddy.utils.tools.MarginItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -72,9 +73,13 @@ class ResultActivity : AppCompatActivity() {
 
 
     private fun setUpViews() {
+        val verticalMargin = resources.getDimensionPixelSize(R.dimen.vertical_margin)
+        val horizontalMargin = resources.getDimensionPixelSize(R.dimen.horizontal_margin)
+
         binding.rvResultReferences.apply {
             layoutManager = LinearLayoutManager(this@ResultActivity, LinearLayoutManager.HORIZONTAL, false)
             adapter = articleAdapter
+            addItemDecoration(MarginItemDecoration(verticalMargin, horizontalMargin))
         }
     }
 
