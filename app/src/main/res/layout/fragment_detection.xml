@@ -21,11 +21,11 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_notes"
+        style="@style/Widget.Material3.CardView.Filled"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
-        style="@style/Widget.Material3.CardView.Filled"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         app:cardBackgroundColor="@color/md_theme_primaryContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         style="@style/Widget.Material3.CardView.Filled"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:layout_marginBottom="24dp"
         android:layout_marginHorizontal="12dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"

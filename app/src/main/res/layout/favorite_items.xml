@@ -59,7 +59,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="5dp"
-            android:background="@drawable/rounded_button"
+            android:background="@drawable/ic_favorite"
             app:layout_constraintEnd_toEndOf="@+id/tv_item_description"
             app:layout_constraintStart_toEndOf="@+id/tv_item_title"
             app:layout_constraintTop_toTopOf="@+id/tv_item_title" />

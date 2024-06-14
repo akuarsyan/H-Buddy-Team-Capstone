@@ -5,53 +5,54 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f5fbef"
     android:orientation="vertical"
     tools:context=".ui.welcome.WelcomeActivity">
 
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextAppearance.Material3.DisplayMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:gravity="center"
+        android:text="@string/app_title"
+        android:textColor="@color/md_theme_primaryFixedDim"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tagline"
+        android:textColor="@color/md_theme_outline"
+        app:layout_constraintBottom_toTopOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginVertical="90dp"
+        android:src="@drawable/welcome_image"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_sign_in"
+        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_gravity="center"
+        android:text="@string/sign_in"
+        android:textColor="@color/md_theme_onPrimaryFixedVariant"
+        app:icon="@drawable/google"
+        app:iconTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            style="@style/TextAppearance.Material3.DisplayMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/app_title"
-            android:textColor="@color/md_theme_primary"
-            android:textStyle="bold" />
-
-        <TextView
-            style="@style/TextAppearance.Material3.BodyLarge"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/md_theme_outline"
-            android:text="@string/tagline" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="90dp"
-            android:src="@drawable/welcome_image" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_sign_in"
-            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_gravity="center"
-            android:text="@string/sign_in"
-            app:icon="@drawable/google"
-            app:iconTint="@null"/>
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

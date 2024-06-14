@@ -77,7 +77,7 @@
             android:layout_marginVertical="8dp"
             android:text="@string/favorite_button"
             app:iconGravity="textStart"
-            app:icon="@drawable/favorite" />
+            app:icon="@drawable/ic_favorite" />
 
         <Button
             android:id="@+id/button_logout"

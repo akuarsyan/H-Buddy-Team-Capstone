@@ -100,7 +100,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:background="@color/md_theme_primaryContainer"
-                            android:button="@drawable/bookmark_icon_selector"
+                            android:button="@drawable/favorite_icon_selector"
                             android:checked="false"
                             app:buttonTint="@color/md_theme_onPrimaryContainer" />
                     </com.google.android.material.card.MaterialCardView>

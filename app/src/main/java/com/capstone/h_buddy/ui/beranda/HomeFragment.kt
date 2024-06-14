@@ -65,12 +65,16 @@ class HomeFragment : Fragment() {
         setDarkMode()
 
         if (list.isEmpty()) {
-            list.add(CarouselModel(R.drawable.jahe, "Jahe"))
-            list.add(CarouselModel(R.drawable.kencur, "Kencur"))
-            list.add(CarouselModel(R.drawable.temulawak, "Temulawak"))
-            list.add(CarouselModel(R.drawable.kunyit, "Kunyit"))
-            list.add(CarouselModel(R.drawable.kayumanis, "Kayu Manis"))
-            list.add(CarouselModel(R.drawable.lidahbuaya, "Lidah Buaya"))
+            list.add(CarouselModel(R.drawable.asoka, "Asoka"))
+            list.add(CarouselModel(R.drawable.bunga_telang, "Bunga Telang"))
+            list.add(CarouselModel(R.drawable.daun_jambu_biji, "Daun Jambu Biji"))
+            list.add(CarouselModel(R.drawable.daun_jarak, "Daun Jarak"))
+            list.add(CarouselModel(R.drawable.daun_jeruk_nipis, "Daun Jeruk Nipis"))
+            list.add(CarouselModel(R.drawable.daun_kayu_putih, "Daun Kayu Putih"))
+            list.add(CarouselModel(R.drawable.daun_pepaya, "Daun Pepaya"))
+            list.add(CarouselModel(R.drawable.daun_sirih, "Daun Sirih"))
+            list.add(CarouselModel(R.drawable.lidah_buaya, "Lidah Buaya"))
+            list.add(CarouselModel(R.drawable.semanggi, "Semanggi"))
             carouselAdapter.notifyDataSetChanged()
         }
     }

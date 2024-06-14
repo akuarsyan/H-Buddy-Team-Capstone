@@ -99,7 +99,7 @@
                 android:id="@+id/button_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:button="@drawable/bookmark_icon_selector"
+                android:button="@drawable/favorite_icon_selector"
                 android:checked="false"
                 app:buttonTint="@color/md_theme_onPrimaryContainer" />
 
