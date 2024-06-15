@@ -31,7 +31,7 @@
 
 
     //favorite page
-    <string name="favorite_header">Favorite</string>
+    <string name="favorite_header">Favorit</string>
     <string name="tab_text1">Deteksi</string>
     <string name="tab_text2">Artikel</string>
     <string name="item_description">Description</string>
@@ -39,11 +39,10 @@
 
     //profile page
     <string name="profile_header">Profil</string>
-    <string name="profile_name">Name</string>
-    <string name="about_button">About this App</string>
-    <string name="favorite_button">Favorite</string>
+    <string name="profile_name">Username</string>
+    <string name="about_button">Tentang kami</string>
+    <string name="favorite_button">Favorit</string>
     <string name="logout_button">Logout</string>
-
 
 
 </resources>

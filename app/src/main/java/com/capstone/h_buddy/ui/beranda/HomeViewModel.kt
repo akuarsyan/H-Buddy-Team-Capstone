@@ -45,5 +45,6 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             dataStoreManager.startDarkMode(isDarkMode)
         }
+
     }
 }

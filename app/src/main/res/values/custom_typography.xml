@@ -25,4 +25,8 @@
         <item name="android:textSize">45sp</item>
         <item name="fontFamily">@font/lora_semibold</item>
     </style>
+    <style name="TextAppearance.Material3.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall" tools:ignore="ResourceCycle">
+        <item name="android:textSize">36sp</item>
+        <item name="fontFamily">@font/lora_bold</item>
+    </style>
 </resources>

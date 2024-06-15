@@ -1,8 +1,6 @@
 package com.capstone.h_buddy.ui.beranda
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +19,7 @@ import com.capstone.h_buddy.databinding.FragmentHomeBinding
 import com.capstone.h_buddy.utils.MyResponse.Status.*
 import com.google.android.material.carousel.CarouselSnapHelper
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -44,7 +43,6 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-
         // Carousel Layout
         // binding.carouselRecyclerView.layoutManager = CarouselLayoutManager(HeroCarouselStrategy())
         // Carousel Snap
@@ -104,18 +102,16 @@ class HomeFragment : Fragment() {
         }
     }
 
+
     private fun setDarkMode() {
         val switch = binding.switchDarkmode
 
         lifecycleScope.launch {
             viewModel.darkModeFlow.collect { isDarkMode ->
-                if (isDarkMode) {
-                    switch.isChecked = true
-                    switch.thumbIconDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_dark_mode)
-                } else {
-                    switch.isChecked = false
-                    switch.thumbIconDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.ic_light_mode)
-                }
+                switch.isChecked = isDarkMode
+                switch.thumbIconDrawable = ContextCompat.getDrawable(requireContext(),
+                    if (isDarkMode) R.drawable.ic_dark_mode else R.drawable.ic_light_mode
+                )
             }
         }
 
@@ -123,16 +119,15 @@ class HomeFragment : Fragment() {
             lifecycleScope.launch {
                 viewModel.startDarkMode(isChecked)
 
-                Handler(Looper.getMainLooper()).postDelayed({
-                    if (isChecked) {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                    } else {
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                    }
-                }, 100)
+                delay(100)
+
+                AppCompatDelegate.setDefaultNightMode(
+                    if (isChecked) AppCompatDelegate.MODE_NIGHT_YES else AppCompatDelegate.MODE_NIGHT_NO
+                )
             }
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
