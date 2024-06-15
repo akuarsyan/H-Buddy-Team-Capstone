@@ -17,11 +17,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            style="?attr/textAppearanceDisplaySmall"
+            android:textSize="36sp"
+            android:fontFamily="@font/lora_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/md_theme_primaryFixedDim"
+            android:textColor="@color/md_theme_primary"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -73,7 +74,8 @@
 
     <TextView
         android:id="@+id/tv_article_section"
-        style="@style/TextAppearance.Material3.TitleLarge"
+        android:textSize="22sp"
+        android:fontFamily="@font/lora_semibold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"

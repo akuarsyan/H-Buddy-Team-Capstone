@@ -77,7 +77,7 @@
                             tools:text="Nama Tumbuhan" />
 
                         <TextView
-                            style="@style/TextAppearance.Material3.TitleMedium"
+                            style="@style/TextAppearance.Material3.BodyMedium.Regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/md_theme_onSurface"
@@ -130,7 +130,7 @@
                         android:textColor="@color/md_theme_primary" />
 
                     <TextView
-                        style="@style/TextAppearance.Material3.BodyMedium"
+                        style="@style/TextAppearance.Material3.BodyMedium.Regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -164,7 +164,7 @@
                         android:textColor="@color/md_theme_primary" />
 
                     <TextView
-                        style="@style/TextAppearance.Material3.BodyMedium"
+                        style="@style/TextAppearance.Material3.BodyMedium.Regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -198,7 +198,7 @@
                         android:textColor="@color/md_theme_primary" />
 
                     <TextView
-                        style="@style/TextAppearance.Material3.BodyMedium"
+                        style="@style/TextAppearance.Material3.BodyMedium.Regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"

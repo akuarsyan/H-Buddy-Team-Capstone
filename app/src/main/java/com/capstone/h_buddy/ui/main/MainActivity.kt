@@ -1,15 +1,21 @@
 package com.capstone.h_buddy.ui.main
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.NavHostController
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.capstone.h_buddy.R
 import com.capstone.h_buddy.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,5 +35,6 @@ class MainActivity : AppCompatActivity() {
         }
         val navController = Navigation.findNavController(this, R.id.host_fragment)
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController)
+
     }
 }

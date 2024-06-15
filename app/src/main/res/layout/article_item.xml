@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/article_cd_image"
                 android:scaleType="centerCrop"
-                tools:src="@drawable/temulawak" />
+                tools:src="@drawable/ic_launcher_foreground" />
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
@@ -44,6 +44,7 @@
             android:textColor="@color/md_theme_onSurface"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/materialCardView"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Judul Artikel, Judul Artikel, Judul Artikel, Judul Artikel, Judul Artikel" />

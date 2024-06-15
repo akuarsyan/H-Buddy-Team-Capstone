@@ -11,7 +11,7 @@
         android:title="Deteksi"/>
 
     <item
-        android:id="@+id/HistoryFragment"
+        android:id="@+id/favoriteFragment"
         android:icon="@drawable/favorite_icon_selector"
         android:title="Favorite"/>
 

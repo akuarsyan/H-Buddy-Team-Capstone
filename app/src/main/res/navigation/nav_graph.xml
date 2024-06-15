@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
- <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
-
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.capstone.h_buddy.ui.beranda.HomeFragment"
@@ -16,7 +15,7 @@
         android:label="fragment_detection"
         tools:layout="@layout/fragment_detection" />
     <fragment
-        android:id="@+id/HistoryFragment"
+        android:id="@+id/favoriteFragment"
         android:name="com.capstone.h_buddy.ui.favorite.FavoriteFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_favorite" />

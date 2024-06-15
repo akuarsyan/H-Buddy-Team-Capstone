@@ -10,7 +10,6 @@
         android:id="@+id/tv_header_detection"
         style="@style/TextAppearance.Material3.TitleLarge"
         android:layout_width="wrap_content"
-
         android:layout_height="wrap_content"
         android:text="@string/detection_header"
         android:textColor="@color/md_theme_onSurface"
