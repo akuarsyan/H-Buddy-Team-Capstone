@@ -24,7 +24,7 @@ class HomeViewModel @Inject constructor(
     private val _articleData = MutableLiveData<MyResponse<ArticlesResponse>>()
     val articleData: LiveData<MyResponse<ArticlesResponse>> get() = _articleData
     private var isDataLoaded = false
-    fun getAllNotes() {
+    fun getAllArticle() {
         if (isDataLoaded) return
         viewModelScope.launch {
             try {

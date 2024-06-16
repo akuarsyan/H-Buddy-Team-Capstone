@@ -62,7 +62,7 @@ class ResultActivity : AppCompatActivity() {
         binding.rvResultReferences.adapter = referencesAdapter
 
         setUpViews()
-        viewModel.getAllNotes()
+        viewModel.getAllArticle()
         addItemOtherResult()
         observeArticleReference()
         //classification result

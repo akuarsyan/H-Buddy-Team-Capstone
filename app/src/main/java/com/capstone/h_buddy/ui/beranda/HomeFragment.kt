@@ -59,7 +59,7 @@ class HomeFragment : Fragment() {
 
         setUpViews()
         observeArticlesData()
-        viewModel.getAllNotes()
+        viewModel.getAllArticle()
         setDarkMode()
 
         if (list.isEmpty()) {
