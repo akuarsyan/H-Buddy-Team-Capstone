@@ -103,7 +103,9 @@ class ResultActivity : AppCompatActivity() {
 
     private fun setResultClassification() {
         val resultString = intent.getStringExtra(RESULT_STRING)
+        val status = intent.getStringExtra(STATUS_STRING)
         binding.tvResultTitle.text = resultString
+        binding.tvBioma.text = status
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -130,5 +132,6 @@ class ResultActivity : AppCompatActivity() {
 
     companion object {
         const val RESULT_STRING = "result_string"
+        const val STATUS_STRING = "status_string"
     }
 }

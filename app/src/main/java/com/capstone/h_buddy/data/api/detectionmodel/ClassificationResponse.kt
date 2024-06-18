@@ -26,5 +26,7 @@ data class Data(
 	val isAboveThreshold: Boolean? = null,
 
 	@field:SerializedName("id")
-	val id: String? = null
+	val id: String? = null,
+
+	val status: String? = "contoh",
 )

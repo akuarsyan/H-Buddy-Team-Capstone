@@ -108,8 +108,8 @@ class DetectionFragment : Fragment() {
                 try {
                     val apiService = ApiConfig.getApiService()
                     val successResponse = apiService.uploadImage(multipartImageFile)
-                   val resultClassification = with(successResponse.data){
-                        if (isAboveThreshold == true){
+                   with(successResponse.data){
+                       val hasil = if (isAboveThreshold == true){
 
                             showToast(successResponse.message.toString())
                             String.format("%s with %.2f%%", result, confidenceScore)
@@ -117,11 +117,14 @@ class DetectionFragment : Fragment() {
                             showToast("Model is predicted successfully but under threshold.")
                             String.format("Please use the correct picture because  the confidence score is %.2f%%", confidenceScore)
                         }
-                    } //
+                       val contoh = status
+                       val intent = Intent(requireContext(), ResultActivity::class.java)
+                       intent.putExtra(ResultActivity.RESULT_STRING, hasil)
+                       intent.putExtra(ResultActivity.STATUS_STRING, status)
+                       startActivity(intent)
+                    }
                     showLoading(false)
-                    val intent = Intent(requireContext(), ResultActivity::class.java)
-                    intent.putExtra(ResultActivity.RESULT_STRING, resultClassification)
-                    startActivity(intent)
+
                 }catch (e: HttpException){
                     val errorBody = e.response()?.errorBody()?.string()
                     val errorResponse = Gson().fromJson(errorBody, ClassificationResponse::class.java)
