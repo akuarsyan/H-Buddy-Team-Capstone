@@ -4,8 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.capstone.h_buddy.data.api.article.ArticlesItem
 import com.capstone.h_buddy.data.api.article.ArticlesResponse
 import com.capstone.h_buddy.data.preference.DataStoreManager
+import com.capstone.h_buddy.data.repository.ArticlesRepository
 import com.capstone.h_buddy.data.repository.MainRepository
 import com.capstone.h_buddy.utils.MyResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,6 +21,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val repository: MainRepository,
     private val dataStoreManager: DataStoreManager,
+    private val articlesRepository: ArticlesRepository
 ) : ViewModel() {
     //article
     private val _articleData = MutableLiveData<MyResponse<ArticlesResponse>>()
@@ -47,4 +50,15 @@ class HomeViewModel @Inject constructor(
         }
 
     }
+
+    //favorite button
+
+    val allArticles: LiveData<List<ArticlesItem>> = articlesRepository.allArticles
+
+    fun updateFavoriteStatus(articleId: Int, isFavorite: Boolean) {
+        viewModelScope.launch {
+            articlesRepository.updateFavoriteStatus(articleId, isFavorite)
+        }
+    }
+
 }

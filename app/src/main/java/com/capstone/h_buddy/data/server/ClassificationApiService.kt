@@ -8,7 +8,7 @@ import retrofit2.http.Part
 
 interface ClassificationApiService {
     @Multipart
-    @POST("skin-cancer/predict")
+    @POST("/skin-cancer/predict")
     suspend fun uploadImage(
         @Part file: MultipartBody.Part
     ): ClassificationResponse

@@ -1,5 +1,9 @@
 package com.capstone.h_buddy.utils.di
 
+import android.content.Context
+import androidx.room.Room
+import com.capstone.h_buddy.data.database.ArticlesDatabase
+import com.capstone.h_buddy.data.database.local.ArticlesDao
 import com.capstone.h_buddy.data.server.ArticlesApiService
 import com.capstone.h_buddy.utils.BASE_URL
 import com.capstone.h_buddy.utils.TIMEOUT_TIME
@@ -8,6 +12,7 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -48,5 +53,19 @@ object ModuleApi {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client).build().create(ArticlesApiService::class.java)
 
+    //Article Database
+    @Provides
+    @Singleton
+    fun provideDatabase(@ApplicationContext context: Context): ArticlesDatabase {
+        return Room.databaseBuilder(
+            context,
+            ArticlesDatabase::class.java,
+            "articles_database"
+        ).build()
+    }
 
+    @Provides
+    fun provideArticlesDao(database: ArticlesDatabase) : ArticlesDao {
+        return database.articlesDao()
+    }
 }

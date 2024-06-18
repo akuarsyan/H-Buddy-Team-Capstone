@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -15,6 +16,7 @@ import com.capstone.h_buddy.data.adapter.CarouselAdapter
 import com.capstone.h_buddy.data.preference.CarouselModel
 import com.capstone.h_buddy.R
 import com.capstone.h_buddy.data.adapter.ArticleAdapter
+import com.capstone.h_buddy.data.api.article.ArticlesItem
 import com.capstone.h_buddy.databinding.FragmentHomeBinding
 import com.capstone.h_buddy.utils.MyResponse.Status.*
 import com.google.android.material.carousel.CarouselSnapHelper
@@ -43,9 +45,7 @@ class HomeFragment : Fragment() {
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-        // Carousel Layout
-        // binding.carouselRecyclerView.layoutManager = CarouselLayoutManager(HeroCarouselStrategy())
-        // Carousel Snap
+
         CarouselSnapHelper().attachToRecyclerView(binding.carouselRecyclerView)
 
         carouselAdapter = CarouselAdapter(list, requireContext())
@@ -61,6 +61,7 @@ class HomeFragment : Fragment() {
         observeArticlesData()
         viewModel.getAllArticle()
         setDarkMode()
+//        setFavorite()
 
         if (list.isEmpty()) {
             list.add(CarouselModel(R.drawable.asoka, "Asoka"))
@@ -102,7 +103,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-
     private fun setDarkMode() {
         val switch = binding.switchDarkmode
 
@@ -127,6 +127,7 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
 
 
     override fun onDestroyView() {

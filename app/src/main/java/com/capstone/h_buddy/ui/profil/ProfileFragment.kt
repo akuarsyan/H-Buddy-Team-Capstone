@@ -45,7 +45,7 @@ class ProfileFragment : Fragment() {
 //        buttonNavigation()
         logoutUser()
         setupButton()
-        setDarkMode()
+//        setDarkMode()
     }
 
     private fun displayUsername() {
