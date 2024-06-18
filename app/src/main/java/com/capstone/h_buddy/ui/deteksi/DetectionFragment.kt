@@ -117,7 +117,7 @@ class DetectionFragment : Fragment() {
                             showToast("Model is predicted successfully but under threshold.")
                             String.format("Please use the correct picture because  the confidence score is %.2f%%", confidenceScore)
                         }
-                    }
+                    } //
                     showLoading(false)
                     val intent = Intent(requireContext(), ResultActivity::class.java)
                     intent.putExtra(ResultActivity.RESULT_STRING, resultClassification)
