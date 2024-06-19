@@ -34,24 +34,29 @@ Docker (optional, for containerization)
 ## Installation
 
 ### Clone the repository:
+```
 git clone https://github.com/your-repo/h-buddy-articles.git
 cd h-buddy-articles
-
+```
 ### Install dependencies:
+```
 npm install
-
+```
 ### Run the server:
+```
 npm start
 The server will start on port 8080 by default.
-
+```
 ## Docker Setup
 
 ### Build the Docker image:
+```
 docker build -t h-buddy-articles .
-
+```
 ### Run the Docker container:
+```
 docker run -p 8080:8080 h-buddy-articles
-
+```
 
 ## API Endpoint
 Get Articles
