@@ -102,10 +102,17 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun setResultClassification() {
-        val resultString = intent.getStringExtra(RESULT_STRING)
-        val status = intent.getStringExtra(STATUS_STRING)
-        binding.tvResultTitle.text = resultString
-        binding.tvBioma.text = status
+
+        val result = intent.getStringExtra("result")
+        val confidenceScore = intent.getStringExtra("confidenceScore")
+        val description = intent.getStringExtra("description")
+        val binomial = intent.getStringExtra("binomial")
+        val benefit = intent.getStringExtra("benefit")
+
+        binding.tvResultTitle.text = result
+        binding.tvBioma.text = binomial
+        binding.tvDescription.text = description
+        binding.tvBenefit.text = benefit
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -128,10 +135,5 @@ class ResultActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-    }
-
-    companion object {
-        const val RESULT_STRING = "result_string"
-        const val STATUS_STRING = "status_string"
     }
 }

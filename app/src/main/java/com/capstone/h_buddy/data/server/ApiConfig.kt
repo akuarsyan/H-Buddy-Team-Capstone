@@ -13,10 +13,11 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://classification-api.dicoding.dev/")
+            .baseUrl("https://flask-tensorflow-gcolab-jvtjfxo25q-et.a.run.app/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
+
         return retrofit.create(ClassificationApiService::class.java)
     }
 }

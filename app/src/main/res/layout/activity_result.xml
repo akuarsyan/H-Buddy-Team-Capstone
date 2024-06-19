@@ -131,6 +131,7 @@
                         android:textColor="@color/md_theme_primary" />
 
                     <TextView
+                        android:id="@+id/tv_description"
                         style="@style/TextAppearance.Material3.BodyMedium.Regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -142,8 +143,10 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+
+
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_result_content"
+                android:id="@+id/card_result_benefit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -161,44 +164,11 @@
                         style="@style/TextAppearance.Material3.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/result_content_title"
-                        android:textColor="@color/md_theme_primary" />
-
-                    <TextView
-                        style="@style/TextAppearance.Material3.BodyMedium.Regular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
-                        android:textColor="@color/md_theme_onSurfaceVariant" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/card_result_benefit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                style="@style/Widget.Material3.CardView.Filled"
-                android:backgroundTint="@color/md_theme_surfaceContainer"
-                app:layout_constraintTop_toBottomOf="@+id/card_result_content">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="12dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextAppearance.Material3.TitleMedium"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:text="@string/result_benefit_title"
                         android:textColor="@color/md_theme_primary" />
 
                     <TextView
+                        android:id="@+id/tv_benefit"
                         style="@style/TextAppearance.Material3.BodyMedium.Regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

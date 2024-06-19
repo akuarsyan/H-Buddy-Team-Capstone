@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.capstone.h_buddy.data.database.ArticlesDatabase
 import com.capstone.h_buddy.data.database.local.ArticlesDao
 import com.capstone.h_buddy.data.server.ArticlesApiService
+import com.capstone.h_buddy.data.server.ClassificationApiService
 import com.capstone.h_buddy.utils.BASE_URL
 import com.capstone.h_buddy.utils.TIMEOUT_TIME
 import com.google.gson.Gson

@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.capstone.h_buddy.data.api.detectionmodel.ClassificationResponse
 import com.capstone.h_buddy.data.server.ApiConfig
@@ -22,6 +23,7 @@ import com.capstone.h_buddy.utils.tools.getImageUri
 import com.capstone.h_buddy.utils.tools.reduceImageFile
 import com.capstone.h_buddy.utils.tools.uriToFile
 import com.google.gson.Gson
+import dagger.hilt.android.AndroidEntryPoint
 import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
@@ -29,31 +31,44 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.HttpException
 
+@AndroidEntryPoint
 class DetectionFragment : Fragment() {
     private lateinit var binding: FragmentDetectionBinding
     private var currentImageUri: Uri? = null
+
+    private val viewModel: DetectionViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentDetectionBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonGallery.setOnClickListener { startGallery() }
         binding.buttonCamera.setOnClickListener { startCamera() }
-        binding.cardPreview.setOnClickListener{ startGallery()}
+        binding.cardPreview.setOnClickListener { startGallery() }
 
-        //sementara untuk preview
         binding.buttonDetection.setOnClickListener {
-//            val intent = Intent(this.requireContext(), ResultActivity::class.java)
-//            startActivity(intent)
             uploadImage()
         }
+
+        viewModel.classificationResponse.observe(viewLifecycleOwner, { response ->
+            response?.let {
+                showLoading(false)
+                val intent = Intent(requireContext(), ResultActivity::class.java).apply {
+                    putExtra("result", it.data.result)
+                    putExtra("confidenceScore", it.data.confidenceScore.toString())
+                    putExtra("description", it.data.description)
+                    putExtra("binomial", it.data.binomial)
+                    putExtra("benefit", it.data.benefit?.joinToString(", "))
+                }
+                startActivity(intent)
+            }
+        })
     }
 
     private fun startCamera() {
@@ -88,7 +103,7 @@ class DetectionFragment : Fragment() {
         currentImageUri?.let {
             Log.d("Photo Picker", "showImage: $it")
             binding.ivDetectionPreview.setImageURI(it)
-            binding.buttonDetection.isEnabled= true
+            binding.buttonDetection.isEnabled = true
         }
     }
 
@@ -97,51 +112,22 @@ class DetectionFragment : Fragment() {
             val imageFile = uriToFile(uri, requireContext()).reduceImageFile()
             Log.d("Image Classification File", "showImage: ${imageFile.path}")
             showLoading(true)
-
             val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
             val multipartImageFile = MultipartBody.Part.createFormData(
-                "photo",
+                "image", //sebelumnya "photo"
                 imageFile.name,
                 requestImageFile
             )
-            lifecycleScope.launch {
-                try {
-                    val apiService = ApiConfig.getApiService()
-                    val successResponse = apiService.uploadImage(multipartImageFile)
-                   with(successResponse.data){
-                       val hasil = if (isAboveThreshold == true){
-
-                            showToast(successResponse.message.toString())
-                            String.format("%s with %.2f%%", result, confidenceScore)
-                        } else {
-                            showToast("Model is predicted successfully but under threshold.")
-                            String.format("Please use the correct picture because  the confidence score is %.2f%%", confidenceScore)
-                        }
-                       val contoh = status
-                       val intent = Intent(requireContext(), ResultActivity::class.java)
-                       intent.putExtra(ResultActivity.RESULT_STRING, hasil)
-                       intent.putExtra(ResultActivity.STATUS_STRING, status)
-                       startActivity(intent)
-                    }
-                    showLoading(false)
-
-                }catch (e: HttpException){
-                    val errorBody = e.response()?.errorBody()?.string()
-                    val errorResponse = Gson().fromJson(errorBody, ClassificationResponse::class.java)
-                    showToast(errorResponse.message.toString())
-                    showLoading(false)
-                }
-            }
+            Log.d("Multipart Image File", "uploadImage: $multipartImageFile")
+            viewModel.uploadImage(multipartImageFile)
         } ?: showToast("Please select an image first")
-
     }
 
-        private fun showLoading(isLoading: Boolean) {
-            binding.progressBarDetection.visibility = if (isLoading) View.VISIBLE else View.GONE
-        }
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBarDetection.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
 
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
-
 }

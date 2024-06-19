@@ -16,17 +16,18 @@ data class Data(
 	@field:SerializedName("result")
 	val result: String? = null,
 
-	@field:SerializedName("createdAt")
-	val createdAt: String? = null,
-
 	@field:SerializedName("confidenceScore")
 	val confidenceScore: Any? = null,
 
 	@field:SerializedName("isAboveThreshold")
 	val isAboveThreshold: Boolean? = null,
 
-	@field:SerializedName("id")
-	val id: String? = null,
+	@field:SerializedName("description")
+	val description: String? = null,
 
-	val status: String? = "contoh",
+	@field:SerializedName("binomial")
+	val binomial: String? = null,
+
+	@field:SerializedName("benefit")
+	val benefit: List<String?>? = null
 )
