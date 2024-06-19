@@ -1,6 +1,7 @@
 package com.capstone.h_buddy.ui.deteksi.hasil
 
 import android.annotation.SuppressLint
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -108,11 +109,14 @@ class ResultActivity : AppCompatActivity() {
         val description = intent.getStringExtra("description")
         val binomial = intent.getStringExtra("binomial")
         val benefit = intent.getStringExtra("benefit")
+        val imageResult = intent.getStringExtra("imageResult") ?: ""
+        val imageUri = Uri.parse(imageResult)
 
         binding.tvResultTitle.text = result
         binding.tvBioma.text = binomial
         binding.tvDescription.text = description
         binding.tvBenefit.text = benefit
+        binding.ivResultPreview.setImageURI(imageUri)
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -131,6 +135,7 @@ class ResultActivity : AppCompatActivity() {
             carouselAdapter.notifyDataSetChanged()
         }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

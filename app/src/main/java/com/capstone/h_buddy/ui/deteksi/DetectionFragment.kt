@@ -54,21 +54,10 @@ class DetectionFragment : Fragment() {
 
         binding.buttonDetection.setOnClickListener {
             uploadImage()
+
         }
 
-        viewModel.classificationResponse.observe(viewLifecycleOwner, { response ->
-            response?.let {
-                showLoading(false)
-                val intent = Intent(requireContext(), ResultActivity::class.java).apply {
-                    putExtra("result", it.data.result)
-                    putExtra("confidenceScore", it.data.confidenceScore.toString())
-                    putExtra("description", it.data.description)
-                    putExtra("binomial", it.data.binomial)
-                    putExtra("benefit", it.data.benefit?.joinToString(", "))
-                }
-                startActivity(intent)
-            }
-        })
+
     }
 
     private fun startCamera() {
@@ -120,7 +109,23 @@ class DetectionFragment : Fragment() {
             )
             Log.d("Multipart Image File", "uploadImage: $multipartImageFile")
             viewModel.uploadImage(multipartImageFile)
-        } ?: showToast("Please select an image first")
+
+            viewModel.classificationResponse.observe(viewLifecycleOwner, { response ->
+                response?.let {
+                    showLoading(false)
+                    val intent = Intent(requireContext(), ResultActivity::class.java).apply {
+                        putExtra("result", it.data.result)
+                        putExtra("confidenceScore", it.data.confidenceScore.toString())
+                        putExtra("description", it.data.description)
+                        putExtra("binomial", it.data.binomial)
+                        putExtra("benefit", it.data.benefit?.joinToString("\n"))
+                        putExtra("imageResult", imageFile.path)
+                    }
+                    startActivity(intent)
+                }
+            })
+
+        } ?: showToast("Tambahkan gambar herbal yang ingin dideteksi")
     }
 
     private fun showLoading(isLoading: Boolean) {

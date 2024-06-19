@@ -26,19 +26,20 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_result_preview"
                 style="@style/Widget.Material3.CardView.Filled"
                 android:layout_width="match_parent"
+                android:layout_marginHorizontal="12dp"
                 android:layout_height="360dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/iv_result_preview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
@@ -50,8 +51,9 @@
                 android:id="@+id/card_result_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.Material3.CardView.Filled"
+                style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="12dp"
                 android:backgroundTint="@color/md_theme_tertiaryContainer"
                 app:layout_constraintTop_toBottomOf="@+id/card_result_preview">
 
@@ -59,7 +61,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:padding="24dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -73,7 +75,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/md_theme_onTertiaryContainer"
-                            android:textStyle="bold"
                             tools:text="Nama Tumbuhan" />
 
                         <TextView
@@ -82,8 +83,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/md_theme_onSurface"
-                            android:textStyle="italic"
-                            android:layout_marginTop="4dp"
+                            android:layout_marginTop="2dp"
                             tools:text="Nama Tumbuhan" />
                     </LinearLayout>
 
@@ -112,15 +112,18 @@
                 android:id="@+id/card_result_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                style="@style/Widget.Material3.CardView.Filled"
-                android:backgroundTint="@color/md_theme_surfaceContainer"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="12dp"
+                style="@style/Widget.Material3.CardView.Outlined"
+                app:strokeWidth="3dp"
+                app:strokeColor="@color/md_theme_onPrimaryContainer"
+                android:backgroundTint="@color/md_theme_primaryContainer"
                 app:layout_constraintTop_toBottomOf="@+id/card_result_name">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:padding="24dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -128,7 +131,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/result_description_title"
-                        android:textColor="@color/md_theme_primary" />
+                        android:textStyle="bold"
+                        android:textColor="@color/md_theme_onPrimaryContainer" />
 
                     <TextView
                         android:id="@+id/tv_description"
@@ -136,8 +140,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Temulawak menjadi tanaman obat dengan banyak senyawa yang bermanfaat untuk kesehatan. Ini termasuk vitamin, kalsium, zat besi, sodium, potasium, hingga asam folat. Selain itu, tanaman herbal ini juga mengandung zat aktif seperti pati, kurkumin, minyak atsiri, turmerol, borneol, dan phellandren."
-                        android:textColor="@color/md_theme_onSurfaceVariant" />
+                        tools:text="Temulawak menjadi tanaman obat dengan banyak senyawa yang bermanfaat untuk kesehatan. Ini termasuk vitamin, kalsium, zat besi, sodium, potasium, hingga asam folat. Selain itu, tanaman herbal ini juga mengandung zat aktif seperti pati, kurkumin, minyak atsiri, turmerol, borneol, dan phellandren."
+                        android:textColor="@color/md_theme_onSurface" />
 
                 </LinearLayout>
 
@@ -150,14 +154,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                style="@style/Widget.Material3.CardView.Filled"
-                android:backgroundTint="@color/md_theme_surfaceContainer"
+                android:layout_marginHorizontal="12dp"
+                style="@style/Widget.Material3.CardView.Outlined"
+                app:strokeWidth="3dp"
+                app:strokeColor="@color/md_theme_onPrimaryContainer"
+                android:backgroundTint="@color/md_theme_primaryContainer"
                 app:layout_constraintTop_toBottomOf="@+id/card_result_description">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="12dp"
+                    android:padding="24dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -165,7 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/result_benefit_title"
-                        android:textColor="@color/md_theme_primary" />
+                        android:textColor="@color/md_theme_onPrimaryContainer" />
 
                     <TextView
                         android:id="@+id/tv_benefit"
@@ -173,8 +180,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
-                        android:textColor="@color/md_theme_onSurfaceVariant" />
+                        tools:text="Kandungan utama rimpang temu lawak adalah protein, karbohidrat, dan minyak atsiri yang terdiri atas kamfer, glukosida, turmerol, dan kurkumin. Kurkumin bermanfaat sebagai antiinflamasi (antiradang) dan anti hepototoksik (anti-keracunan empedu). Temu lawak memiliki efek farmakologi yaitu hepatoprotektor (mencegah penyakit hati), menurunkan kadar kolesterol, antiinflamasi (antiradang), laxative (pencahar), diuretik (peluruh kencing), dan menghilangkan nyeri sendi.[1] Manfaat lainnya yaitu, meningkatkan nafsu makan, melancarkan ASI, dan membersihkan darah."
+                        android:textColor="@color/md_theme_onSurface" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -186,6 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="48dp"
+                android:layout_marginHorizontal="12dp"
                 android:text="@string/result_reference_title"
                 android:textColor="@color/md_theme_onSurface"
                 app:layout_constraintStart_toStartOf="parent"
@@ -206,6 +214,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 app:layout_constraintStart_toStartOf="parent"
@@ -219,6 +228,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="12dp"
                 android:text="@string/result_other_title"
                 android:textColor="@color/md_theme_onSurface"
                 app:layout_constraintStart_toStartOf="parent"
@@ -229,6 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="12dp"
                 android:clipChildren="false"
                 android:clipToPadding="false"
                 app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
