@@ -27,7 +27,7 @@ h-buddy-articles/
 - server.js: Initializes and starts the Hapi server, and sets up the routes.
 
 ## Setting Up the API
-###Prerequisites
+### Prerequisites
 Node.js (version 20 or higher)
 Docker (optional, for containerization)
 
