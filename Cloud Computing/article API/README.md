@@ -1,9 +1,9 @@
-#__h-buddy-articles REST API Documentation__
+# __h-buddy-articles REST API Documentation__
 
-##Overview
+## Overview
 This documentation provides an overview of the h-buddy-articles REST API, including the setup, structure, and available endpoints. The API is designed to scrape articles about various herbs from specified URLs and provide this data through a GET request.
 
-##Project Structure
+## Project Structure
 h-buddy-articles/
 ├── controllers/
 │   └── articles.js
@@ -16,7 +16,7 @@ h-buddy-articles/
 ├── package-lock.json
 └── server.js
 
-##File Descriptions
+## File Descriptions
 
 - controllers/articles.js: Contains the logic for scraping articles from specified URLs and extracting relevant data.
 - routes/articles.js: Defines the route for the API endpoint.
@@ -26,43 +26,43 @@ h-buddy-articles/
 - package-lock.json: Records the exact versions of the installed npm packages.
 - server.js: Initializes and starts the Hapi server, and sets up the routes.
 
-##Setting Up the API
+## Setting Up the API
 ###Prerequisites
 Node.js (version 20 or higher)
 Docker (optional, for containerization)
 
-##Installation
+## Installation
 
-###Clone the repository:
+### Clone the repository:
 git clone https://github.com/your-repo/h-buddy-articles.git
 cd h-buddy-articles
 
-###Install dependencies:
+### Install dependencies:
 npm install
 
-###Run the server:
+### Run the server:
 npm start
 The server will start on port 8080 by default.
 
-##Docker Setup
+## Docker Setup
 
-###Build the Docker image:
+### Build the Docker image:
 docker build -t h-buddy-articles .
 
-###Run the Docker container:
+### Run the Docker container:
 docker run -p 8080:8080 h-buddy-articles
 
 
-##API Endpoint
+## API Endpoint
 Get Articles
 URL: /articles
 Method: GET
 Description: Fetches a list of articles about various herbs.
 
-##Request
+## Request
 No request body or parameters are needed for this endpoint.
 
-##Response
+## Response
 Status: 200 OK
 Content-Type: application/json
 Body:
@@ -88,6 +88,6 @@ Body:
 }
 
 
-##Example using Postman
+## Example using Postman
 Import the collection: You can import the provided Postman collection to quickly test the API.
 Send GET request: Send a GET request to http://localhost:8080/articles to retrieve the list of articles.
