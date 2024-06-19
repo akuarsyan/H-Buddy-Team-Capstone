@@ -59,10 +59,11 @@ docker run -p 8080:8080 h-buddy-articles
 ```
 
 ## API Endpoint
-Get Articles
-URL: /articles
-Method: GET
-Description: Fetches a list of articles about various herbs.
+###Get Articles
+- URL: /articles
+- Method: GET
+- Description: Fetches a list of articles about various herbs.
+- Deployed URL: https://h-buddy1-jvtjfxo25q-et.a.run.app/articles
 
 ## Request
 No request body or parameters are needed for this endpoint.
@@ -70,7 +71,8 @@ No request body or parameters are needed for this endpoint.
 ## Response
 Status: 200 OK
 Content-Type: application/json
-Body:
+Body: 
+```
 {
     "status": true,
     "articles": [
@@ -91,6 +93,22 @@ Body:
         ...
     ]
 }
+```
+
+
+## Plant information
+### The API provides 10 articles information about various plants, including:
+
+- Asoka
+- Bunga Telang
+- Daun Jambu Biji
+- Daun Jarak
+- Daun Jeruk Nipis
+- Daun Pepaya
+- Kayu Putih
+- Lidah Buaya
+- Semanggi
+- Sirih
 
 
 ## Example using Postman
