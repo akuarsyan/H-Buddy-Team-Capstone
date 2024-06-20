@@ -36,10 +36,11 @@ Introducing H-Buddy, a helpful companion for anyone interested in herbs. With ju
   - Download the .apk file
   - Install the app
   - The application is ready to launch
+  
+## Demo Video
+ [Link here](https://drive.google.com/file/d/1bvDp4Nysclz_q6MgP9Qj7x4QMqW7dGhU/view) - Demo Video
  
 ## Features
-//demo
-link here
 
 - Predicts images of herbal plants through the camera or input images through the gallery in real time
 - Provides information about the detected herbal plants including: description, content, and benefits
