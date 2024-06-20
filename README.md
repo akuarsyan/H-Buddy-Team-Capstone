@@ -73,6 +73,9 @@ Here is the [link](https://drive.google.com/drive/folders/1re6X940tm5bmaMYy-K8lB
 - **Installation:**
   - Download the .apk file
   - Install the application and using it happily
+ 
+## Demo Video
+[Link here](https://drive.google.com/file/d/1bvDp4Nysclz_q6MgP9Qj7x4QMqW7dGhU/view) - Demo Video
 
 ## H-Buddy Features
 
@@ -85,6 +88,7 @@ Here is the [link](https://drive.google.com/drive/folders/1re6X940tm5bmaMYy-K8lB
 
 Github Repository
 [link](https://github.com/akuarsyan/H-Buddy-Team-Capstone)
+
 
 ## Contact
 
