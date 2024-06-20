@@ -13,6 +13,7 @@ We collect the dataset ourselves by photographing the herb plants directly in th
 - [PROCESSED DATASET](https://github.com/akuarsyan/H-Buddy-Team-Capstone/tree/main/Machine%20Learning/Dataset/Processed%20Dataset)
 
 ## Model
+After trying several models and looking for good model information from research papers, we finally decided to use the EfficientNetV2B0 model. 
 ### EfficientNetV2B0
 <p align="left">
   EfficientNetV2B0 is a deep learning model designed for image classification, including ten types of herbal plants. The model has been pre-trained on a very large dataset so that it is able to recognize and extract important features from herbal images.  By training using already labeled images of herbs, the model can provide probability predictions for each plant species when given a new image. EfficientNetV2B0 is very effective in recognizing herbal plant species.
@@ -20,6 +21,9 @@ We collect the dataset ourselves by photographing the herb plants directly in th
 <p align="center">
   <img src="https://github.com/akuarsyan/H-Buddy-Team-Capstone/blob/main/Machine%20Learning/Result/arsitektur.jpg" alt="Deskripsi Gambar" style="width:70%">
 </p>
+
+Link EfficientNetV2B0:
+[EficientNetV2B0](https://github.com/akuarsyan/H-Buddy-Team-Capstone/blob/main/Machine%20Learning/EfficientNetV2B0.ipynb)
 
 ## Evaluation and Visualitation
 Once the model training process is complete, the next step is to evaluate its performance. At this stage, accuracy and other relevant evaluation metrics will be measured to assess the model's ability to perform classification.
@@ -37,4 +41,9 @@ Once the model training process is complete, the next step is to evaluate its pe
 ### Confusion Matrix
 <p align="left">
   <img src="https://github.com/akuarsyan/H-Buddy-Team-Capstone/blob/main/Machine%20Learning/Result/confusion%20matrix.png" alt="Deskripsi Gambar" style="width:50%; border: 1px solid black;">
+</p>
+
+### Prediction Result
+<p align="left">
+  <img src="https://github.com/akuarsyan/H-Buddy-Team-Capstone/blob/main/Machine%20Learning/Result/result%20label%20and%20prediction.png" alt="Deskripsi Gambar" style="width:50%; border: 1px solid black;">
 </p>
