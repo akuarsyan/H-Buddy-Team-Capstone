@@ -1,4 +1,4 @@
-# H-Buddy Herbs Prediction Backend API
+# H-Buddy Herbs Prediction Backend API Documentation
 
 # Overview
 The Plant Prediction API allows users to upload an image of a plant leaf, which is then processed and classified using a pre-trained TensorFlow model. The API returns the predicted plant type along with detailed information about the plant.
