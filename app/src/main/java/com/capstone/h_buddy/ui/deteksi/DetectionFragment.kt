@@ -12,22 +12,26 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.capstone.h_buddy.data.api.detectionmodel.ClassificationResponse
+import com.capstone.h_buddy.data.server.ApiConfig
 import com.capstone.h_buddy.databinding.FragmentDetectionBinding
 import com.capstone.h_buddy.ui.deteksi.hasil.ResultActivity
 import com.capstone.h_buddy.utils.tools.getImageUri
 import com.capstone.h_buddy.utils.tools.reduceImageFile
 import com.capstone.h_buddy.utils.tools.uriToFile
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.HttpException
 
-@AndroidEntryPoint
+
 class DetectionFragment : Fragment() {
     private lateinit var binding: FragmentDetectionBinding
     private var currentImageUri: Uri? = null
-
-    private val viewModel: DetectionViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -94,29 +98,41 @@ class DetectionFragment : Fragment() {
             showLoading(true)
             val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
             val multipartImageFile = MultipartBody.Part.createFormData(
-                "image", //sebelumnya "photo"
+                "image",
                 imageFile.name,
                 requestImageFile
             )
             Log.d("Multipart Image File", "uploadImage: $multipartImageFile")
-            viewModel.uploadImage(multipartImageFile)
+            lifecycleScope.launch {
+                try {
+                    val apiService = ApiConfig.getApiService()
+                    val successResponse = apiService.uploadImage(multipartImageFile)
+                    with(successResponse.data) {
+                        if (isAboveThreshold == true) {
 
-            viewModel.classificationResponse.observe(viewLifecycleOwner, { response ->
-                response?.let {
-                    showLoading(false)
-                    val intent = Intent(requireContext(), ResultActivity::class.java).apply {
-                        putExtra("result", it.data.result)
-                        putExtra("confidenceScore", it.data.confidenceScore.toString())
-                        putExtra("description", it.data.description)
-                        putExtra("binomial", it.data.binomial)
-                        putExtra("benefit", it.data.benefit?.joinToString("\n"))
-                        putExtra("imageResult", imageFile.path)
+                            showToast(successResponse.message.toString())
+                            val intent = Intent(requireContext(), ResultActivity::class.java)
+                            intent.putExtra(ResultActivity.EXTRA_RESULT, result)
+                            intent.putExtra(ResultActivity.EXTRA_BINOMIAL, binomial)
+                            intent.putExtra(ResultActivity.EXTRA_DESCRIPTION, description)
+                            intent.putExtra(ResultActivity.EXTRA_BENEFIT, benefit?.joinToString("\n"))
+                            intent.putExtra(ResultActivity.EXTRA_IMAGE, imageFile.path)
+                            startActivity(intent)
+                        } else {
+                            showToast("Pastikan gambar terdeteksi dengan jelas")
+                        }
                     }
-                    startActivity(intent)
-                }
-            })
+                    showLoading(false)
 
-        } ?: showToast("Tambahkan gambar herbal yang ingin dideteksi")
+                } catch (e: HttpException) {
+                    val errorBody = e.response()?.errorBody()?.string()
+                    val errorResponse =
+                        Gson().fromJson(errorBody, ClassificationResponse::class.java)
+                    showToast(errorResponse.message.toString())
+                    showLoading(false)
+                }
+            }
+        } ?: showToast("Please select an image first")
     }
 
     private fun showLoading(isLoading: Boolean) {

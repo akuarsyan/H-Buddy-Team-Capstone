@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -29,6 +30,9 @@ class ArticleAdapter @Inject constructor(@ActivityContext private val context: C
                     .error(R.drawable.ic_launcher_foreground)
                     .placeholder(R.drawable.ic_launcher_foreground)
                     .into(ivArticleImage)
+                buttonFavorite.setOnClickListener {
+                    Toast.makeText(context, "Artikel ditambahkan ke favorit", Toast.LENGTH_LONG).show()
+                }
             }
             itemView.setOnClickListener {
                 val intent = Intent(context, ArticleDetail::class.java)

@@ -3,6 +3,7 @@ package com.capstone.h_buddy.ui.welcome
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -113,6 +114,7 @@ class WelcomeActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null){
             startActivity(Intent(this@WelcomeActivity, MainActivity::class.java))
+            Toast.makeText(this, "Hi! ${user.displayName} selamat datang di H-Buddy", Toast.LENGTH_SHORT).show()
             finish()
         }
     }

@@ -3,14 +3,99 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.favorite.tabs.FavoriteArticleFragment">
+    android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="8dp"
+        android:backgroundTint="@color/md_theme_surfaceContainer"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/article_item"/>
+        tools:context=".ui.favorite.tabs.FavoriteArticleFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView"
+                style="@style/Widget.Material3.CardView.Filled"
+                android:layout_width="140dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/button_favorite"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_article_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/article_cd_image"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/asokaarticledummy" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tv_article_title"
+                style="@style/TextAppearance.Material3.TitleMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textColor="@color/md_theme_onSurface"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/materialCardView"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="Bunga Asoka : Mitologi, Taksonomi, Morfologi, Ciri, Manfaat &amp; Cara Tanam" />
+
+            <TextView
+                android:id="@+id/tv_article_body"
+                style="@style/TextAppearance.Material3.BodyMedium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/md_theme_outline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/tv_article_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_article_title"
+                android:text="Tanaman asoka lebih dikenal sebagai tanaman hias karena bentuknya yang cantik dan warna bunga cerah. Tetapi, pohon asoka juga memiliki manfaat baik lainnya, terutama bagi kesehatan tubuh." />
+
+            <TextView
+                android:id="@+id/tv_article_label"
+                style="@style/TextAppearance.Material3.LabelSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:textColor="@color/md_theme_tertiary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_favorite"
+                app:layout_constraintStart_toStartOf="@+id/tv_article_title"
+                app:layout_constraintTop_toTopOf="@+id/button_favorite"
+                android:text="Asoka" />
+
+
+            <CheckBox
+                android:id="@+id/button_favorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/favorite_icon_selector"
+                android:checked="true"
+                app:buttonTint="@color/md_theme_primary"
+                app:layout_constraintEnd_toEndOf="@+id/tv_article_body"
+                app:layout_constraintTop_toBottomOf="@+id/tv_article_body" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

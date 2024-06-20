@@ -104,12 +104,11 @@ class ResultActivity : AppCompatActivity() {
 
     private fun setResultClassification() {
 
-        val result = intent.getStringExtra("result")
-        val confidenceScore = intent.getStringExtra("confidenceScore")
-        val description = intent.getStringExtra("description")
-        val binomial = intent.getStringExtra("binomial")
-        val benefit = intent.getStringExtra("benefit")
-        val imageResult = intent.getStringExtra("imageResult") ?: ""
+        val result = intent.getStringExtra(EXTRA_RESULT)
+        val description = intent.getStringExtra(EXTRA_DESCRIPTION)
+        val binomial = intent.getStringExtra(EXTRA_BINOMIAL)
+        val benefit = intent.getStringExtra(EXTRA_BENEFIT)
+        val imageResult = intent.getStringExtra(EXTRA_IMAGE) ?: ""
         val imageUri = Uri.parse(imageResult)
 
         binding.tvResultTitle.text = result
@@ -117,6 +116,9 @@ class ResultActivity : AppCompatActivity() {
         binding.tvDescription.text = description
         binding.tvBenefit.text = benefit
         binding.ivResultPreview.setImageURI(imageUri)
+        binding.buttonFavorite.setOnClickListener {
+            Toast.makeText(this, "Ditambahkan ke favorit", Toast.LENGTH_LONG).show()
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -140,5 +142,12 @@ class ResultActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+    companion object{
+        const val EXTRA_RESULT = "extra_result"
+        const val EXTRA_BINOMIAL = "extra_binomial"
+        const val EXTRA_DESCRIPTION = "extra_description"
+        const val EXTRA_BENEFIT = "extra_benefit"
+        const val EXTRA_IMAGE = "extra_image"
     }
 }
