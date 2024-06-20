@@ -17,7 +17,7 @@ A brief description of what this project does and who it's for
 ## H-Buddy Application
 
 <p align="center">
-  <img src="ISI GAMBAR" style="width:100%;">
+  <img src="https://github.com/akuarsyan/H-Buddy-Team-Capstone/blob/main/overview.png" style="width:100%;">
 </p>
 
 Introducing H-Buddy, a helpful companion for anyone interested in herbs. With just a photo from your camera or gallery, H-Buddy can identify various herbs and provide you with detailed information, including descriptions, nutritional content and health benefits. In addition, H-Buddy offers articles with guidance on how to turn these herbs into healthy consumer goods. Whether you are new to herbs or experienced, H-Buddy is here to support your herbal journey with useful and practical information.
