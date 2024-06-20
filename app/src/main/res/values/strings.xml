@@ -43,6 +43,10 @@
     <string name="about_button">Tentang kami</string>
     <string name="favorite_button">Favorit</string>
     <string name="logout_button">Logout</string>
+    <string name="developer_team">Machine Learning \n 1. Dzakwan Ammar Aziz – Universitas Bengkulu \n 2. Syakira Az Zahra – Universitas Bengkulu \n 3. Vilda Aprilia – Universitas Bengkulu \n Cloud Computing \n 4. Lutfi Arief Noerjaman – Universitas Pendidikan Indonesia \n 5. Umar Abdul Aziz – Universitas Pendidikan Indonesia \n Mobile Development (Android) \n 6. Akhmad Bahasyim – Universitas Mulawarman \n 7. Muhammad Hedi Arsyan Fadillah – Universitas Pendidikan Indonesia</string>
+    <string name="about_app">Tentang Aplikasi</string>
+    <string name="developer_team_title">Tim Pengembang</string>
+    <string name="about_app_body">H-Buddy adalah sebuah aplikasi inovatif yang berfokus pada klasifikasi gambar tanaman herbal. Aplikasi ini dirancang untuk meningkatkan pemberdayaan tanaman herbal yang ada di sekitar kita, dengan tujuan memanfaatkan tanaman-tanaman tersebut sebagai konsumsi yang menyehatkan. H-Buddy memungkinkan pengguna untuk mengenali berbagai jenis tanaman herbal hanya dengan memotret tanaman tersebut. Saat ini, aplikasi H-Buddy dapat mengenali 10 jenis tanaman herbal, yaitu Asoka, Bunga Telang, Daun Jambu Biji, Daun Jarak, Daun Jeruk Nipis, Daun Kayu Putih, Daun Pepaya, Daun Sirih, Lidah Buaya, dan Semanggi. Dikembangkan sebagai bagian dari Capstone Project Bangkit Academy 2024 yang didukung oleh Google, GoTo, dan Traveloka, H-Buddy hadir untuk mempermudah masyarakat dalam mengenali dan memanfaatkan tanaman herbal di kehidupan sehari-hari, sehingga dapat mendukung gaya hidup sehat berbasis alam.</string>
 
 
 </resources>

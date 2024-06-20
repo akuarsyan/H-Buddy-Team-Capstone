@@ -1,7 +1,6 @@
 package com.capstone.h_buddy.ui.deteksi
 
 import android.content.Intent
-import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -12,24 +11,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.lifecycleScope
-import com.capstone.h_buddy.data.api.detectionmodel.ClassificationResponse
-import com.capstone.h_buddy.data.server.ApiConfig
 import com.capstone.h_buddy.databinding.FragmentDetectionBinding
 import com.capstone.h_buddy.ui.deteksi.hasil.ResultActivity
 import com.capstone.h_buddy.utils.tools.getImageUri
 import com.capstone.h_buddy.utils.tools.reduceImageFile
 import com.capstone.h_buddy.utils.tools.uriToFile
-import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
-import es.dmoral.toasty.Toasty
-import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
-import retrofit2.HttpException
 
 @AndroidEntryPoint
 class DetectionFragment : Fragment() {

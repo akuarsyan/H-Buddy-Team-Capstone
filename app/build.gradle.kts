@@ -102,9 +102,6 @@ dependencies {
     //data store
     implementation("androidx.datastore:datastore-preferences:1.1.1")
 
-    //toast
-    implementation("com.github.GrenderG:Toasty:1.5.2")
-
     //circle image
     implementation("de.hdodenhof:circleimageview:3.1.0")
 }
