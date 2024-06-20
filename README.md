@@ -26,7 +26,9 @@ Introducing H-Buddy, a helpful companion for anyone interested in herbs. With ju
 ## This App was built with MVVM Architecture
 
 
-![viewmodel]()
+<p align="center">
+  <img src="readme_resource/MVVM.png" alt="MVVM" style="width:100%; border-radius: 15px;">
+</p>
 
 ## Getting Started
 
