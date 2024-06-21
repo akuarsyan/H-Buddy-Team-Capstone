@@ -31,6 +31,18 @@ Here is the [link](https://drive.google.com/drive/folders/1re6X940tm5bmaMYy-K8lB
   <video src="https://drive.google.com/file/d/1bvDp4Nysclz_q6MgP9Qj7x4QMqW7dGhU/view" width="400" />
 </div>
 
+## Herbal Limitation
+This project was done within a month, so we had limited development time. From that, we took 10 herbal plant samples that are available for detection. As follows:
+1. Asoka
+2. Bunga Telang
+3. Daun Jambu Biji
+4. Daun Jarak
+5. Daun Jeruk Nipis
+6. Daun Kayu Putih
+7. Daun Pepaya
+8. Daun Sirih
+9. Lidah Buaya
+10. Semanggi
 
 ## Built with
 
