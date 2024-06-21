@@ -66,7 +66,7 @@ This project was done within a month, so we had limited development time. From t
   - Cloud Storage
   - VScode
   - Postman
-  - Flash
+  - Flask
   - Docker
 
 ## Architecture Overview
