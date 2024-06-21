@@ -99,9 +99,11 @@ This project was done within a month, so we had limited development time. From t
 ## Github Repository
 
 Github Repository
-[link](https://github.com/akuarsyan/H-Buddy-Team-Capstone)
+
 [Cloud Computing](https://github.com/akuarsyan/H-Buddy-Team-Capstone/tree/ab8bef45cae139a6164cea9fd95c37df8180267e/Cloud%20Computing)
+
 [Machine Learning](https://github.com/akuarsyan/H-Buddy-Team-Capstone/tree/3be1e793a759ce82e7a58f2b497a33c5b8893173/Machine%20Learning)
+
 [Mobile Development](https://github.com/akuarsyan/H-Buddy-Team-Capstone/tree/3be1e793a759ce82e7a58f2b497a33c5b8893173/Mobile%20Development)
 
 
