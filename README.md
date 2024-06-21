@@ -80,16 +80,16 @@ This project was done within a month, so we had limited development time. From t
 
 - **Installation:**
   - Download the .apk file
-  - Install the application and using it happily
+  - Install the application and use it happily
  
 ## Demo Video
 [Link here](https://drive.google.com/file/d/1bvDp4Nysclz_q6MgP9Qj7x4QMqW7dGhU/view) - Demo Video
 
 ## H-Buddy Features
 
-- Predicts images of herbal plants through the camera or input images through the gallery in real time
-- Provides information about the detected herbal plants including: description, content, and benefits
-- Provides reference articles about processing herbal plants into healthy consumption
+- Predicts images of herbal plants through the camera or input images through the gallery in real-time
+- Provides information about the detected herbal plants including description, content, and benefits
+- Provides reference articles about processing herbal plants for healthy consumption
 - Dark Mode feature that provides convenience for users
 
 ## Github Repository
