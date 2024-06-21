@@ -9,6 +9,18 @@ Introducing H-Buddy, a helpful companion for anyone interested in herbs. With ju
   <img src="readme_resource/Hero Image.png" alt="Gambar Utama" style="width:100%; border-radius: 15px;">
 </p>
 
+## Herbal Limitation
+This project was done within a month, so we had limited development time. From that, we took 10 herbal plant samples that are available for detection. As follows:
+1. Asoka
+2. Bunga Telang
+3. Daun Jambu Biji
+4. Daun Jarak
+5. Daun Jeruk Nipis
+6. Daun Kayu Putih
+7. Daun Pepaya
+8. Daun Sirih
+9. Lidah Buaya
+10. Semanggi
 
 ## Libraries and Technology Stacks
 - Minimum SDK 24, Nougat, Android 7
