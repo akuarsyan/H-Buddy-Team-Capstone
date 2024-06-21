@@ -97,7 +97,7 @@ This project was done within a month, so we had limited development time. From t
 
 [Machine Learning](https://github.com/akuarsyan/H-Buddy-Team-Capstone/tree/3be1e793a759ce82e7a58f2b497a33c5b8893173/Machine%20Learning)
 
-[Mobile Development](https://github.com/akuarsyan/H-Buddy-Team-Capstone/tree/3be1e793a759ce82e7a58f2b497a33c5b8893173/Mobile%20Development)
+[Mobile Development](https://github.com/akuarsyan/H-Buddy-Team-Capstone/tree/master)
 
 
 ## Contact
