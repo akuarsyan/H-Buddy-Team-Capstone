@@ -25,7 +25,7 @@ This project was done within a month, so we had limited development time. From t
 ## Libraries and Technology Stacks
 - Minimum SDK 24, Nougat, Android 7
 - Figma
-- Android Studi (Fully using Kotlin)
+- Android Studio (Fully using Kotlin)
 - Material Design 3
 - MVVM Architecture
 - [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android?hl=id) - Dependency Injection
