@@ -20,16 +20,12 @@ A brief description of what this project does and who it's for
   <img src="https://github.com/akuarsyan/H-Buddy-Team-Capstone/blob/main/overview.png" style="width:100%;">
 </p>
 
+## About
 Introducing H-Buddy, a helpful companion for anyone interested in herbs. With just a photo from your camera or gallery, H-Buddy can identify various herbs and provide you with detailed information, including descriptions, nutritional content and health benefits. In addition, H-Buddy offers articles with guidance on how to turn these herbs into healthy consumer goods. Whether you are new to herbs or experienced, H-Buddy is here to support your herbal journey with useful and practical information.
 
 ## Download Link
 
 Here is the [link](https://drive.google.com/drive/folders/1re6X940tm5bmaMYy-K8lB222LSxrluR5?usp=sharing) of H-Buddy App 
-
-## About Project
-<div align="center">
-  <video src="https://drive.google.com/file/d/1bvDp4Nysclz_q6MgP9Qj7x4QMqW7dGhU/view" width="400" />
-</div>
 
 ## Herbal Limitation
 This project was done within a month, so we had limited development time. From that, we took 10 herbal plant samples that are available for detection. As follows:
