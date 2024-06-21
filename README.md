@@ -1,7 +1,7 @@
 
 # H-BUDDY CAPSTONE
 
-A brief description of what this project does and who it's for
+This project is part of the (Studi Independen) program of Bangkit Academy 2024 by Google, GoTo, and Traveloka.
 
 ## Team Members – C241-PS284
 | Member    | Student ID    | Path    | University    |
