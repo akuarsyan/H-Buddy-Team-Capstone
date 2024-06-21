@@ -40,7 +40,7 @@ This project was done within a month, so we had limited development time. From t
 9. Lidah Buaya
 10. Semanggi
 
-## Built with
+## Built With
 
 - **Machine Learning:**
   - Python
